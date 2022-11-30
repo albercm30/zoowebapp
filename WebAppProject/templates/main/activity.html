@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    {% extends "principal.html" %}
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/.css') }}">
+        <title>Activities view</title>
+    </head>
+
+    {% block content %}
+    <section>
+        <h2 class="heading">ACTIVITIES</h2>
+    </section>
+
+    {% for activity in activities %}
+    <div class="activity">
+        <div class="name">{{ activity.name }}></div>
+        <div class="description">
+            <p>{{ activity.description }}</p>
+            <p>{{ activity.date }}</p>
+        </div>
+        <div>
+            <img class="image" src=.../static/img/...>
+        </div>
+        <div class="signup">
+            {% for date in dates %}
+            --user needs to be logged in--
+            <button class="">
+                
+            </button>
+        </div>

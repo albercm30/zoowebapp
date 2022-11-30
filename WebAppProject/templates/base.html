@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <header id="navegator">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('main.index') }}"">Zoo</a></li>
+                    <li><a href="{{ url_for('main.animals') }}">Animals</a></li> 
+                    <li><a href="{{ url_for('main.activities') }}">Activities</a></li> 
+                    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                    <li><a href="{{ url_for('auth.signup') }}">SignUp</a></li>
+                </ul>
+             </nav>
+        </header>
+        <section class="content">
+            {% block content %}{% endblock %}
+        </section>
+        <footer>
+            <small>
+                <a href="#navegator">Home</a>
+                <p>All website content is the property of LEGANES ZOOLOGICAL CORPORATION, and/or its subsidiaries unless otherwise indicated. All rights reserved.</p>
+                <p>© Copyright 2022</p>
+            </small>
+        </footer>
+    </body>
+</html>
