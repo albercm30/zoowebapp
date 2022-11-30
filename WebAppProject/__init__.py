@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
-db = SQLAlchemy()
+db = SQLAlchemy()  x
 bcrypt = Bcrypt()
 
 def create_app(test_config=None):
