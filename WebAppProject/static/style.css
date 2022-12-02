@@ -4,26 +4,18 @@ html {
 
 body {
     margin: 0;
-    background-color: #efefef;
+    background-color: #e9ded6;
 }
 
-header {
-    background-color: #312645;
-    color: whitesmoke;
-    padding: 3rem 2rem;
-    position:fixed;
-}
-
-/* header nav{
+nav{
     display:grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    background: aliceblue;
-    font-family: sans-serif;
+    background: burlywood;
     position:fixed;
     top:0;
     width:100%;
-} */
+}
 
 .logo{
     width: 50px;
@@ -32,17 +24,17 @@ header {
 
 .barnav{
     display:grid;
-    grid-template-columns: repeat(4,auto);
+    grid-template-columns: repeat(5,auto);
     margin-right: 30px;
 }
 
-.barnav div{
+.barnav li{
     padding: 10px 20px;
 }
 
-.barnav div:hover{
+.barnav li:hover{
     cursor: pointer;
-    background:#CDDC39;
+    background:#9cd48a;
 }
 
 footer {
