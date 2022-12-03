@@ -9,9 +9,9 @@
         <link rel="stylesheet" href="../static/style.css">
     </head>
     <body>
-        <header id="navegator">
+        <header>
             <nav>
-                <img class="logo" src="../static/zoo-logo.png"/>
+                <a href="../templates/main/index.html"><img class="logo" src="../static/zoo-logo.png" alt="logo"/></a>
                 <ul class="barnav">
                     <li><a href="{{ url_for('main.index') }}">Zoo</a></li>
                     <li><a href="{{ url_for('main.animals') }}">Animals</a></li> 
@@ -21,14 +21,25 @@
                 </ul>
              </nav>
         </header>
+        
         <section class="content">
-            {% block content %}{% endblock %}
+                <div class="container-title">
+                    <h1 class="title">Aqui va el primer titulo</h1>
+                </div>
+                <div class="container-middle">
+                    <div class="middlte title">
+                        <h6>Actividades</h6>
+                        <p>Aqui va descripción entremedias sobre las actividades</p>
+                    </div>
+                    <img src="../static/delfin.jpeg"/>
+                </div>
+            <!-- {% block content %}{% endblock %} -->
         </section>
-        <section><h1>SEPARADOR</h1></section>
+        
         <footer>
             <small>
-                <a href="#navegator">Home</a>
-                <p>All website content is the property of LEGANES ZOOLOGICAL CORPORATION, and/or its subsidiaries unless otherwise indicated. All rights reserved.</p>
+                <p><a href="{{ url_for('main.index') }}">Home</a></p>
+                <p>All website content is the property of LEGANES ZOOLOGICAL CORPORATION. All rights reserved.</p>
                 <p>© Copyright 2022</p>
             </small>
         </footer>

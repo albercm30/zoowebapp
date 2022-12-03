@@ -7,7 +7,7 @@ body {
     background-color: #e9ded6;
 }
 
-nav{
+nav {
     display:grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -18,14 +18,17 @@ nav{
 }
 
 .logo{
-    width: 50px;
-    height: 50px;
+    height: 75px;
+    padding-left: 9.5rem;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
 }
 
 .barnav{
     display:grid;
     grid-template-columns: repeat(5,auto);
-    margin-right: 30px;
+    margin-right: 9.5rem;
+    list-style-type: none;
 }
 
 .barnav li{
@@ -37,14 +40,46 @@ nav{
     background:#9cd48a;
 }
 
+.content{
+    height: 1100px;
+    width: 100rem;
+    /* margin-top: 60px; */
+    margin: 0 auto;
+}
+
+.container-title {
+    background-image: url('../static/camello.jpg');
+    background-size: contain;
+    position: center;
+    height: 500px;
+    margin-top: 60px;
+}
+
+.title {
+    padding: 10rem;
+    text-align: center;
+    font-weight: black;
+    font-size: 5rem;
+}
+
+.container-middle {
+    margin-top: 6rem;
+    flex-direction: row;
+}
+
+.middle title {
+    flex-direction: column;
+}
+
 footer {
     background-color: #222;
     padding: 3rem;
     color:burlywood;
+    margin-top: 2000px;
 }
 
-footer div {
-    float: right;
+footer small {
+    text-align: right;
 }
 
 footer p {
@@ -53,7 +88,7 @@ footer p {
 
 footer a {
     transition: color 0.2s ease;
-    color: white;
+    color: #e9ded6;
     text-decoration: none;
 }
 
