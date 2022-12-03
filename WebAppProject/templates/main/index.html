@@ -2,10 +2,19 @@
 
 {% block content %}
 <div class="container-title">
-    <h2 class="title">Aqui va el primer titulo</h2>
+    <h1 class="title">Here is the first title</h1>
 </div>
-<div class="middle-title">
-    <p>Aqui va descripción entremedias sobre las actividades</p>
-    <img src="../../static/delfin.jpeg"/>
+<div class="container-middle">
+    <div class="container-activity">
+        <a href="{{ url_for('main.activities') }}"><img src=".{{ url_for('static', filename='delfin.css') }}"/></a>
+        <div class="text-activities">
+            <h4>Activities</h4>
+            <p>Here goes a description of the activities</p> 
+        </div>
+    </div>
+</div>
+<div class="container-animals">
+    <h2>Here a title for the animals</h2>
+    
 </div>
 {% endblock %}
