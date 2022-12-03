@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-        <title>Title</title>
+        <title>Zoological Park</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <body>
         <header>
             <nav>
-                <a href="../templates/main/index.html"><img class="logo" src="../static/zoo-logo.png" alt="logo"/></a>
+                <div class="logo"><a href="{{ url_for('main.index') }}"><img src="../static/zoo-logo.png" alt="logo"/></a></div>
                 <ul class="barnav">
                     <li><a href="{{ url_for('main.index') }}">Zoo</a></li>
                     <li><a href="{{ url_for('main.animals') }}">Animals</a></li> 
@@ -21,17 +21,25 @@
                 </ul>
              </nav>
         </header>
-        
         <section class="content">
-                <div class="container-title">
-                    <h1 class="title">Aqui va el primer titulo</h1>
-                </div>
-                <div class="container-middle">
-                    <div class="middlte title">
-                        <h6>Actividades</h6>
-                        <p>Aqui va descripción entremedias sobre las actividades</p>
+
+            <div class="container-title">
+                <h1 class="title">Here is the first title</h1>
+            </div>
+            <div class="container-middle">
+                <div class="container-activity">
+                    <a href="{{ url_for('main.activities') }}"><img src="../static/delfin.jpeg"/></a>
+                    <div class="text-activities">
+                        <h4>Activities</h4>
+                        <p>Here goes a description of the activities</p> 
                     </div>
                 </div>
+            </div>
+            <div class="container-animals">
+                <h2>Here a title for the animals</h2>
+                
+            </div>
+
             <!-- {% block content %}{% endblock %} -->
         </section>
         

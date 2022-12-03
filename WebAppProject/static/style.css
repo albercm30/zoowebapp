@@ -7,6 +7,12 @@ body {
     background-color: #e9ded6;
 }
 
+a {
+    text-decoration: none;
+    color: #27231d;
+}
+
+
 nav {
     display:grid;
     grid-template-columns: 1fr auto;
@@ -17,9 +23,12 @@ nav {
     width:100%;
 }
 
-.logo{
+.logo {
+    margin-left: 20rem;
+}
+
+.logo img{
     height: 75px;
-    padding-left: 9.5rem;
     filter: brightness(1.1);
     mix-blend-mode: multiply;
 }
@@ -27,50 +36,69 @@ nav {
 .barnav{
     display:grid;
     grid-template-columns: repeat(5,auto);
-    margin-right: 9.5rem;
+    padding-right: 20rem;
     list-style-type: none;
 }
 
 .barnav li{
     padding: 10px 20px;
+    font-size: 17px;
 }
 
-.barnav li:hover{
-    cursor: pointer;
-    background:#9cd48a;
+.barnav li a{
+    transition: color 0.2s ease;
+    color: #27231d;
+    text-decoration: none;
 }
+
+.barnav li a:hover {
+    color:white;
+}
+
 
 .content{
     height: 1100px;
-    width: 100rem;
-    /* margin-top: 60px; */
+    width: 79rem;
     margin: 0 auto;
 }
 
 .container-title {
-    background-image: url('../static/camello.jpg');
-    background-size: contain;
-    position: center;
+    background-image: url('../static/img-title.jpg');
+    background-size: cover;
     height: 500px;
     margin-top: 60px;
 }
 
 .title {
-    padding: 10rem;
+    padding-top: 15rem;
     font-size: 5rem;
+    text-align: center;
 }
 
 .container-middle {
-    margin-top: 6rem;
-    flex-direction: row;
+    margin-top: 10rem;
 }
 
-.middle title {
-    flex-direction: column;
+.container-activity img {
+    float: right;
+    border-radius: 2em;
+}
+
+.text-activities {
+    padding-top: 1.5rem;
+    padding-left: 2rem;
+}
+
+.text-activities h4 {
+    font-size: 42px;
+}
+
+.container-animals {
+    margin-top: 20rem;
 }
 
 footer {
-    background-color: #222;
+    background-color: #27231d;
     padding: 3rem;
     color:burlywood;
     margin-top: 2000px;
@@ -91,5 +119,5 @@ footer a {
 }
 
 footer a:hover {
-    color: cornflowerblue;
+    color: w;
 }
