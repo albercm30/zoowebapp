@@ -23,27 +23,7 @@
              </nav>
         </header>
         <section class="content">
-
-            <div class="container-title">
-                <h1 class="title">Zoological Park</h1>
-            </div>
-            <div class="container-middle">
-                <a href="{{ url_for('main.activities') }}"><img src="../static/falcon.jpg" alt="falcon"/></a>
-                <!-- {{ url_for('static', filename='dolphin.jpeg') }} -->
-                <h2>Activities</h2>
-                <p>Here goes a description of the activities.</p> 
-            </div>
-            <div class="container-animals">
-                <h2>Here a title for the animals</h2>
-                <div class="img-animals">
-                    <a href="{{ url_for('main.animal') }}"><img src="../static/camel.jpg" alt="camel" class="camel" /></a>
-                    <a href="{{ url_for('main.animal') }}"><img src="../static/polar-bear.png" alt="polar bear" class="polar-bear" /></a>
-                    <a href="{{ url_for('main.animal') }}"><img src="../static/deer.jpg" alt="deer" class="deer" /></a>
-                    <a href="{{ url_for('main.animal') }}"><img src="../static/stingray.jpg" alt="stingray" class="stingray"/></a>
-                </div>
-            </div>
-
-            <!-- {% block content %}{% endblock %} -->
+            {% block content %}{% endblock %}
         </section>
         
         <footer>
