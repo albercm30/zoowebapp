@@ -24,7 +24,7 @@ nav {
 }
 
 .logo {
-    margin-left: 20rem;
+    margin-left: 23rem;
 }
 
 .logo img{
@@ -36,7 +36,7 @@ nav {
 .barnav{
     display:grid;
     grid-template-columns: repeat(5,auto);
-    padding-right: 20rem;
+    padding-right: 23rem;
     list-style-type: none;
 }
 
@@ -58,15 +58,16 @@ nav {
 
 .content{
     height: 1100px;
-    width: 79rem;
-    margin: 0 auto;
+    /* width: 79rem;
+    margin: 0 auto; */
 }
 
 .container-title {
     background-image: url('../static/img-title.jpg');
     background-size: cover;
-    height: 500px;
+    height: 400px;
     margin-top: 60px;
+    margin-bottom: 150px;
 }
 
 .title {
@@ -76,25 +77,71 @@ nav {
 }
 
 .container-middle {
-    margin-top: 10rem;
+    background: #27231d;
+    height: 500px;
+    margin:auto;
 }
 
-.container-activity img {
+
+.container-middle img {
     float: right;
+    /* margin: 3rem 23.5rem; */
+    margin-top: 3rem;
+    margin-left: 2rem;
+    margin-right: 24rem;
     border-radius: 2em;
+    width: 600px;
 }
 
-.text-activities {
-    padding-top: 1.5rem;
-    padding-left: 2rem;
+
+.container-middle h2 {
+    color: #e9ded6;
+    font-size: 50px;
+    padding-top: 5rem;
+    padding-left: 22rem;
 }
 
-.text-activities h4 {
-    font-size: 42px;
+.container-middle p {
+    color: #e9ded6;
+    margin-left: 22rem;
+    margin-bottom: 5rem;
 }
 
 .container-animals {
-    margin-top: 20rem;
+    margin-top: 10rem;
+    margin-left: 22rem;
+}
+
+.container-animals h2 {
+    font-size: 50px;
+    margin-left: 18rem;
+}
+
+.img-animals {
+    margin-top: 60px;
+}
+
+.img-animals img{
+    width: 500px;
+    border-radius: 2rem;
+}
+
+.camel {
+    margin-left: 40px;
+}
+
+.polar-bear {
+    margin-left: 90px;
+}
+
+.deer {
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.stingray {
+    margin-left: 90px;
+    margin-top: 50px;
 }
 
 footer {
@@ -114,10 +161,10 @@ footer p {
 
 footer a {
     transition: color 0.2s ease;
-    color: #e9ded6;
+    color: rgb(221, 221, 221);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: w;
+    color: #e9ded6;
 }

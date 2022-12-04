@@ -2,19 +2,20 @@
 
 {% block content %}
 <div class="container-title">
-    <h1 class="title">Here is the first title</h1>
+    <h1 class="title">Zoological Park</h1>
 </div>
 <div class="container-middle">
-    <div class="container-activity">
-        <a href="{{ url_for('main.activities') }}"><img src=".{{ url_for('static', filename='delfin.css') }}"/></a>
-        <div class="text-activities">
-            <h4>Activities</h4>
-            <p>Here goes a description of the activities</p> 
-        </div>
-    </div>
+    <a href="{{ url_for('main.activities') }}"><img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon"/></a>
+    <h2>Activities</h2>
+    <p>Here goes a description of the activities. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex quidem odit accusamus enim consequatur repudiandae officia dicta sapiente asperiores, tempore, reprehenderit pariatur molestiae atque, inventore dolores architecto veniam facere error.</p> 
 </div>
 <div class="container-animals">
     <h2>Here a title for the animals</h2>
-    
+    <div class="img-animals">
+        <a href="{{ url_for('main.animal') }}"><img src="{{ url_for('static', filename='camel.jpg') }}" alt="camel" class="camel" /></a>
+        <a href="{{ url_for('main.animal') }}"><img src="{{ url_for('static', filename='polar-bear.png') }}" alt="polar bear" class="polar-bear" /></a>
+        <a href="{{ url_for('main.animal') }}"><img src="{{ url_for('static', filename='deer.jpg') }}" alt="deer" class="deer" /></a>
+        <a href="{{ url_for('main.animal') }}"><img src="{{ url_for('static', filename='stingray.jpeg') }}" alt="stingray" class="stingray"/></a>
+    </div>
 </div>
 {% endblock %}
