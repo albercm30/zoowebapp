@@ -28,7 +28,7 @@ class Scheduledactivity(db.Model):
     activity_id = db.Column(db.Integer, db.ForeignKey('activity.id'), nullable=False)
     date = db.Column(db.Date(), nullable=False)
     stating_time = db.Column(Time(), nullable=False)
-    duration = db.Column(db.Time(),  nullable=False)
+    duration = db.Column(db.Integer,  nullable=False)
     places = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
 
@@ -39,7 +39,7 @@ class Reservation(db.Model):
     activity_id = db.Column(db.Integer, db.ForeignKey('scheduledactivity.id'), nullable=False)
     places = db.Column(db.Integer, nullable=False)
     date = db.Column(db.Date(), nullable=False)
-    duration = db.Column(db.Time(),  nullable=False)
+    duration = db.Column(db.Integer,  nullable=False)
     places = db.Column(db.Integer, nullable=False)
 
 
