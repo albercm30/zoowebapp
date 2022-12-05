@@ -56,7 +56,7 @@ def login_post():
         return redirect(url_for("auth.login"))
 
 
-@bp.route("/logout", methods=["POST"])
-def logout_post():
+@bp.route("/logout")
+def logout():
     flask_login.logout_user()
     return redirect(url_for("auth.login"))
