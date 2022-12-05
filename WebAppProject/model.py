@@ -11,6 +11,7 @@ class User(flask_login.UserMixin,db.Model):
 
 class Animal(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    activity_id = db.Column(db.Integer, db.ForeignKey('activity.id'), nullable=False)
     name = db.Column(db.String(64), nullable=False)
     description = db.Column(db.VARCHAR(500),  nullable=False)
     activities = db.relationship('Activity', backref='animal', lazy=True)
