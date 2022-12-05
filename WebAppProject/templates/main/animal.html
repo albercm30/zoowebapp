@@ -1,7 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section>
-    <h1>Animal</h1>
-</section>
+<div class="title">
+    <h1>Animals</h1>
+</div>
+
+<div class="container-desert">
+    <h2>Desert Biome</h2>
+    <div class="camel">
+        <img src="{{ url_for('static', filename='camel.jpg') }}" alt="camel" class="camel" />
+        <p>Camels are characterized by being one of the few animals in the world that can store water.</p>
+    </div>
+    <div class="snake">
+        <img src="{{ url_for('static', filename='snake.jpeg') }}" alt="snake" class="snake" />
+        <p>Snakes are characterized by their slithering movement, contracting and releasing their muscles.</p>
+    </div>
+</div>
+
+<div class="container-aquatic">
+    <h2>Aquatic Biome</h2>
+    <div class="stingray">
+        <img src="{{ url_for('static', filename='stingray.jpg') }}" alt="stingray" class="stingray" />
+        <p>Stingrays are characterized by their sharp and lethal sting.</p>
+    </div>
+    <div class="dolphin">
+        <img src="{{ url_for('static', filename='dolphin.jpeg') }}" alt="dolphin" class="dolphin" />
+        <p>Dolphins are characterized by their playful mood and their astounding intelligence.</p>
+    </div>
+</div>
+
+<div class="container-ice">
+    <h2>Ice Biome</h2>
+    <div class="polar-bear">
+        <img src="{{ url_for('static', filename='polar-bear.png') }}" alt="polar-bear" class="polar-bear" />
+        <p>Polar bears are characterized by their strength and protectiveness to their young ones.</p>
+    </div>
+    <div class="penguin">
+        <img src="{{ url_for('static', filename='penguin.jpeg') }}" alt="penguin" class="penguin" />
+        <p>Penguins are characterized by their ability to slide through ice.</p>
+    </div>
+</div>
+
+<div class="container-forest">
+    <h2>Forest Biome</h2>
+    <div class="deer">
+        <img src="{{ url_for('static', filename='deer.jpg') }}" alt="deer" class="deer" />
+        <p>Deers are characterized by their long legs and powerful speed.</p>
+    </div>
+    <div class="falcon">
+        <img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon" class="falcon" />
+        <p>Falcons are characterized by their long and pointed wings which they can beat up very fast.</p>
+    </div>
+</div>
 {% endblock %}
