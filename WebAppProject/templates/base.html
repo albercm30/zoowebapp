@@ -9,25 +9,25 @@
         <link rel="stylesheet" href="../static/style.css">
         <!-- "{{ url_for('static', filename='style.css') }}" -->
     </head>
+    <header>
+        <nav>
+            <div class="logo"><a href="{{ url_for('main.index') }}"><img src="{{ url_for('static', filename='zoo-logo.png') }}" alt="logo"/></a></div>
+            <ul class="barnav">
+                <li><a href="{{ url_for('main.index') }}">Zoo</a></li>
+                <li><a href="{{ url_for('main.animals') }}">Animals</a></li> 
+                <li><a href="{{ url_for('main.activities') }}">Activities</a></li> 
+                {% if current_user.is_authenticated: %}
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li> 
+
+                {% else %}
+                <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                <li><a href="{{ url_for('auth.signup') }}">SignUp</a></li>
+                {% endif %}
+
+            </ul>
+            </nav>
+    </header>
     <body>
-        <header>
-            <nav>
-                <div class="logo"><a href="{{ url_for('main.index') }}"><img src="{{ url_for('static', filename='zoo-logo.png') }}" alt="logo"/></a></div>
-                <ul class="barnav">
-                    <li><a href="{{ url_for('main.index') }}">Zoo</a></li>
-                    <li><a href="{{ url_for('main.animals') }}">Animals</a></li> 
-                    <li><a href="{{ url_for('main.activities') }}">Activities</a></li> 
-                    {% if current_user.is_authenticated: %}
-                    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li> 
-
-                    {% else %}
-                    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-                    <li><a href="{{ url_for('auth.signup') }}">SignUp</a></li>
-                    {% endif %}
-
-                </ul>
-             </nav>
-        </header>
         <section class="content">
             {% block content %}{% endblock %}
         </section>
