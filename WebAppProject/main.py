@@ -28,5 +28,6 @@ def customers():
 @bp.route("/activity")
 # @flask_login.login_required
 def activities():
-    activities = model.Activity.query.order_by(model.Activity.id.desc()).limit(10).all()
-    return render_template("main/activity.html",activities=activities)
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
