@@ -28,4 +28,5 @@ def customers():
 @bp.route("/activity")
 # @flask_login.login_required
 def activities():
-    return render_template("main/activity.html")
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).limit(10).all()
+    return render_template("main/activity.html",activities=activities)
