@@ -28,6 +28,23 @@
              </nav>
         </header>
         <section class="content">
+            <div class="container-login">
+                <h2>Log In</h2>
+                <div class="login-boxed">
+                    <form action="{{ url_for('auth.login_post') }}" method="post">
+                        <div><label><input type="email" name="email" placeholder="Email" required/></label></div>
+                        <br/>
+                        <div><label><input type="password" name="password" placeholder="Password" required/></label></div>
+                        <br/>
+                        <div class="submit-login"><button type="submit">Log In</button></div>
+                    </form>
+                </div>
+                <br/>
+                <a href="{{ url_for('auth.signup') }}">Sign up here</a>
+                {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                <p class="notification">{{ message }}</p>
+            </div>
             {% block content %}{% endblock %}
         </section>
         

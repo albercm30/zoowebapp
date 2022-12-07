@@ -57,9 +57,7 @@ nav {
 
 
 .content{
-    height: 1100px;
-    /* width: 79rem;
-    margin: 0 auto; */
+    height: 3000px;
 }
 
 
@@ -153,30 +151,31 @@ nav {
 
 /* SIGNUP */
 .container-signup {
-    margin: 17rem 40rem 0 40rem;
+    margin: 12rem 40rem 0 40rem;
     padding-top: 4rem;
     padding-left: 8rem;
     box-sizing: content-box;
     background-color: #27231d;
     border-radius: 1rem;
-    height: 45%;
+    height: 17%;
 }
 
 .container-signup h2 {
     font-weight: 700;
     font-size: 45px;
-    padding-left: 0.75rem;
+    padding-left: 2rem;
     color: #e9ded6;
 }
 
 .signup-boxed {
-    padding-left: 1.5rem;
+    padding-left: 3rem;
 }
 
 .signup-boxed input {
     height: 40px;
     width: 250px;
     background-color: #645f56;
+	font-family: 'Work Sans', sans-serif;
     color: #e9ded6;
     padding-left: 5px;
     font-size: large;
@@ -211,10 +210,12 @@ nav {
     border-color: whitesmoke;
 }
 
-.notification {
+.notification-signup {
     margin-top: 20px;
-    margin-left: 1.5rem;
+    margin-left: 2.25rem;
     color:#e9ded6;
+	font-size: 20px;
+	font-weight: bold;
 }
 /* SIGNUP */
 
@@ -222,24 +223,24 @@ nav {
 
 /* LOGIN */
 .container-login {
-    margin: 17rem 40rem 0 40rem;
-    padding-top: 6rem;
+    margin: 12rem 40rem 0 40rem;
+    padding-top: 5rem;
     padding-left: 8rem;
     box-sizing: content-box;
     background-color: #27231d;
     border-radius: 1rem;
-    height: 40%;
+    height: 15%;
 }
 
 .container-login h2 {
     font-weight: 700;
     font-size: 50px;
-    padding-left: 4.75rem;
+    padding-left: 6rem;
     color: #e9ded6;
 }
 
 .login-boxed {
-    padding-left: 1.5rem;
+    padding-left: 3rem;
 }
 
 .login-boxed input {
@@ -276,21 +277,30 @@ nav {
 }
 
 .container-login a {
-    padding-left: 1.5rem;
+    padding-left: 3rem;
     color: #e9ded6;
+	font-size: 20px;
     transition: all 0.2s ease;
 }
 
 .container-login a:hover {
     color: whitesmoke;
 }
+
+.notification-login {
+    margin-top: 20px;
+    color:#e9ded6;
+	font-size: 20px;
+	font-weight: bold;
+}
 /* LOGIN */
+
 
 
 footer {
     background-color: #27231d;
     padding: 3rem;
-    color:burlywood;
+    color: burlywood;
     margin-top: 2000px;
 }
 
