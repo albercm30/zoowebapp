@@ -25,9 +25,36 @@ def animals():
 def customers():
     return render_template("main/customer.html")
 
-@bp.route("/activity")
+@bp.route("/activity",methods=["POST"])
 # @flask_login.login_required
-def activities():
+def add_activity():
+    title = request.form.get("title")
+    minimum_age = request.form.get("minimum_age")
+    description = request.form.get("description")
+    new_activity = model.Activity(title=title, description=description, minimum_age=minimum_age,is_marked=False)
+    db.session.add(new_activity)
+    db.session.commit()
+    flash("You've successfully added an activity")
     activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
     cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
     return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
+"""
+def add_schedule():
+    # activity_title, date, starting_time,duration, places, price  
+    activity_title = request.form.get("activity_title")
+    activity = model.Activity.query.filter_by(title=activity_title).first()
+    activity_id = activity.id
+    date = request.form.get("date")
+    starting_time = request.form.get("starting_time")
+    duration = request.form.get("duration")
+    places = request.form.get("places")
+    price = request.form.get("price")
+    new_schedule= model.Activity(activity_id=activity_id, date=date, stating_time=starting_time,
+    duration=duration, places=places, price=price)
+    db.session.add(new_schedule)
+    db.session.commit()
+    flash("You've successfully added scheduled the activityy")
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
+    """
