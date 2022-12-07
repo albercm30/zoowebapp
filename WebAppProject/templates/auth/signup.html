@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Sign Up NOW!</h2>
-<form action="{{ url_for('auth.signup') }}" method="post">
-    <div><label>Email: <input type="email" name="email" required/></label></div>
-    <div><label>User name: <input type="text" name="username" required/></label></div>
-    <div><label>Password: <input type="password" name="password" required/></label></div>
-    <div><label>Repeat password: <input type="password" name="password_repeat" required/></label></div>
-    <div><input type="submit" value="Sign Up"/></div>
-</form>
-{% with messages = get_flashed_messages() %}
-{% for message in messages %}
-    <div class="notification">{{ message }}</div>
+<div class="container-signup">
+    <h2>Sign Up NOW!</h2>
+    <div class="signup-boxed">
+        <form action="{{ url_for('auth.signup') }}" method="post">
+            <div><label><input type="email" name="email" placeholder="Email" required/></label></div>
+            <br/>
+            <div><label><input type="text" name="username" placeholder="Username" required/></label></div>
+            <br/>
+            <div><label><input type="password" name="password" placeholder="Password" required/></label></div>
+            <br/>
+            <div><label><input type="password" name="password_repeat" placeholder="Repeat password" required/></label></div>
+            <br/>
+            <div class="submit-signup"><button type="submit">Sign Up</button></div>
+        </form>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+    <p class="notification">{{ message }}</p>
+</div>
 {% endfor %}
 {% endwith %}
 {% endblock %}

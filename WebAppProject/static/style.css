@@ -57,9 +57,7 @@ nav {
 
 
 .content{
-    height: 1100px;
-    /* width: 79rem;
-    margin: 0 auto; */
+    height: 3000px;
 }
 
 
@@ -151,26 +149,98 @@ nav {
 
 
 
-/* LOGIN */
-.container-login {
-    margin: 17rem 40rem 0 40rem;
-    padding-top: 6rem;
+/* SIGNUP */
+.container-signup {
+    margin: 12rem 40rem 0 40rem;
+    padding-top: 4rem;
     padding-left: 8rem;
     box-sizing: content-box;
     background-color: #27231d;
     border-radius: 1rem;
-    height: 40%;
+    height: 17%;
+}
+
+.container-signup h2 {
+    font-weight: 700;
+    font-size: 45px;
+    padding-left: 2rem;
+    color: #e9ded6;
+}
+
+.signup-boxed {
+    padding-left: 3rem;
+}
+
+.signup-boxed input {
+    height: 40px;
+    width: 250px;
+    background-color: #645f56;
+	font-family: 'Work Sans', sans-serif;
+    color: #e9ded6;
+    padding-left: 5px;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+}
+
+::placeholder {
+    color:#e9ded6;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.submit-signup {
+    margin-left: 5rem;
+}
+
+.submit-signup button {
+    width: 100px;
+    height: 30px;
+    background-color: burlywood;
+    font-family: 'Work Sans', sans-serif;
+    font-size: large;
+    color: #27231d;
+    border-radius: 5px;
+    border-color: burlywood;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    
+}
+
+.submit-signup button:hover {
+    border-color: whitesmoke;
+}
+
+.notification-signup {
+    margin-top: 20px;
+    margin-left: 2.25rem;
+    color:#e9ded6;
+	font-size: 20px;
+	font-weight: bold;
+}
+/* SIGNUP */
+
+
+
+/* LOGIN */
+.container-login {
+    margin: 12rem 40rem 0 40rem;
+    padding-top: 5rem;
+    padding-left: 8rem;
+    box-sizing: content-box;
+    background-color: #27231d;
+    border-radius: 1rem;
+    height: 15%;
 }
 
 .container-login h2 {
     font-weight: 700;
     font-size: 50px;
-    padding-left: 4.75rem;
+    padding-left: 6rem;
     color: #e9ded6;
 }
 
 .login-boxed {
-    padding-left: 1.5rem;
+    padding-left: 3rem;
 }
 
 .login-boxed input {
@@ -184,36 +254,32 @@ nav {
     border: none;
 }
 
-::placeholder {
-    color:#e9ded6;
-    font-family: 'Work Sans', sans-serif;
-}
-
-.submit {
+.submit-login {
     margin-left: 4.75rem;
 }
 
-.submit button{
+.submit-login button {
     width: 100px;
     height: 30px;
-    background-color: #645f56;
+    background-color: burlywood;
     font-family: 'Work Sans', sans-serif;
     font-size: large;
-    color: #e9ded6;
+    color: #27231d;
     border-radius: 5px;
-    border-color: #645f56;
+    border-color: burlywood;
     transition: border-color 0.2s;
     cursor: pointer;
     
 }
 
-.submit button:hover {
-    border-color: #e9ded6;
+.submit-login button:hover {
+    border-color: whitesmoke;
 }
 
 .container-login a {
-    padding-left: 1.5rem;
+    padding-left: 3rem;
     color: #e9ded6;
+	font-size: 20px;
     transition: all 0.2s ease;
 }
 
@@ -221,18 +287,20 @@ nav {
     color: whitesmoke;
 }
 
-.notification {
+.notification-login {
     margin-top: 20px;
-    margin-left: 1.5rem;
     color:#e9ded6;
+	font-size: 20px;
+	font-weight: bold;
 }
 /* LOGIN */
+
 
 
 footer {
     background-color: #27231d;
     padding: 3rem;
-    color:burlywood;
+    color: burlywood;
     margin-top: 2000px;
 }
 
@@ -253,3 +321,128 @@ footer a {
 footer a:hover {
     color: #e9ded6;
 }
+
+/* ANIMAL */
+
+.container-desert {
+    background-color:darkorange;
+    height: 830px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+} 
+
+.camel img {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.camel p {
+    padding-left: 5ex;
+    margin-bottom: 20px;
+} 
+
+.snake img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.snake p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+.container-aquatic { 
+    background-color: aqua;
+    height: 830px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+} 
+
+.stingray img {
+    height: 300px;
+    padding-right: 200px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+} 
+
+.stingray p {
+    margin-bottom: 1px;
+} 
+
+.dolphin img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.dolphin p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+.container-ice {
+    background-color: ghostwhite;
+    height: 830px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+} 
+
+.polar-bear img {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.polar-bear p {
+    padding-left: 5ex;
+    margin-bottom: 20px;
+} 
+
+.penguin img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.penguin p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+.container-forest {
+    background-color: darkgreen;
+    height: 870px;
+    margin-top: 60px;
+    margin-bottom: 170px;
+} 
+
+.deer img {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.deer p {
+    padding-left: 5ex;
+    margin-bottom: 20px;
+} 
+
+.falcon img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.falcon p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+/* ANIMAL */
+
