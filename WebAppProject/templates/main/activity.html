@@ -40,24 +40,27 @@
     {% endwith %}
 
 </div>
-<!--
+
 <div>
     <h3> Sheduling activities :</h3>
-    activity_title, date, starting_time,duration, places, price
    
-        
+    <form action="{{ url_for('main.add_schedule') }}" method="post">
+        <div><label>Activity:</label></div>
+        <select name="activity_title" >
+            {% for activity in activities %}
+            <option>{{ activity.title}}</option>
+            {% endfor %}
+        </select>
         <div><label>Date: <input type="date" name="date" required/></label></div>
         <div><label>Starting time : <input type="time" name="starting_time" required/></label></div>
         <div><label>Duration in hours : <input type="number" name="duration" required/></label></div>
         <div><label>Number of places: <input type="number" name="places" required/></label></div>
         <div><label>Price: <input type="number" name="price" required/></label></div>
-        <p><textarea rows=5 cols=60 placeholder="Add a description" name="description" required></textarea></p>
-        <div><input type="submit" value="Submit"/></div>
+        <div><input type="submit" value="Add"/></div>
     </form>
 </div>
 <div>
     <h3> Marking activities :</h3>
 
 </div>
--->
 {% endblock %}
