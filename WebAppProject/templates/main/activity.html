@@ -7,22 +7,57 @@
 
 {% for activity in activities %}
 <div class="activity">
-    <div class="name">{{ activity.name }}></div>
+    <h3>{{ activity.title }}</h3>
         <div class="description">
             <p>{{ activity.description }}</p>
-            <p>{{ activity.date }}</p>
         </div>
+        {% for act in cheduleds %}
+                {% if act.activity_id == activity.id  %}
+                    <p>A session is scheduled the {{act.date}} starting at {{act.stating_time}}</p> 
+                {%endif%}  
+        {% endfor %}
     <div>
         <img class="image" src=.../static/img/...>
     </div>
     <div class="signup">
-        {% for date in dates %}
-        --user needs to be logged in--
-        <button class="">
-            
-        </button>
-        {% endfor %}
+        
     </div>
 </div>
     {% endfor %}
+
+<div>
+    <h3> Adding activities :</h3>
+    <form action="{{ url_for('main.add_activity') }}" method="post">
+        <div><label>Title of the activity: <input type="text" name="title" required/></label></div>
+        <div><label>Minimum age : <input type="number" name="minimum_age" required/></label></div>
+        <p><textarea rows=5 cols=60 placeholder="Add a description" name="description" required></textarea></p>
+        <div><input type="submit" value="Submit"/></div>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <div class="notification">{{ message }}</div>
+        {% endfor %}
+    {% endwith %}
+
+</div>
+<!--
+<div>
+    <h3> Sheduling activities :</h3>
+    activity_title, date, starting_time,duration, places, price
+   
+        
+        <div><label>Date: <input type="date" name="date" required/></label></div>
+        <div><label>Starting time : <input type="time" name="starting_time" required/></label></div>
+        <div><label>Duration in hours : <input type="number" name="duration" required/></label></div>
+        <div><label>Number of places: <input type="number" name="places" required/></label></div>
+        <div><label>Price: <input type="number" name="price" required/></label></div>
+        <p><textarea rows=5 cols=60 placeholder="Add a description" name="description" required></textarea></p>
+        <div><input type="submit" value="Submit"/></div>
+    </form>
+</div>
+<div>
+    <h3> Marking activities :</h3>
+
+</div>
+-->
 {% endblock %}
