@@ -58,11 +58,13 @@ nav {
 
 .content{
     height: 1100px;
-    margin-top: 80px;
     /* width: 79rem;
     margin: 0 auto; */
 }
 
+
+
+/* INDEX */
 .container-title {
     background-image: url('../static/img-title.jpg');
     background-size: cover;
@@ -75,6 +77,7 @@ nav {
     padding-top: 15rem;
     font-size: 5rem;
     text-align: center;
+    color: #27231d;
 }
 
 .container-middle {
@@ -86,7 +89,6 @@ nav {
 
 .container-middle img {
     float: right;
-    /* margin: 3rem 23.5rem; */
     margin-top: 3rem;
     margin-left: 2rem;
     margin-right: 24rem;
@@ -116,6 +118,7 @@ nav {
 .container-animals h2 {
     font-size: 50px;
     margin-left: 18rem;
+    color: #27231d;
 }
 
 .img-animals {
@@ -144,6 +147,87 @@ nav {
     margin-left: 90px;
     margin-top: 50px;
 }
+/* INDEX */
+
+
+
+/* LOGIN */
+.container-login {
+    margin: 17rem 40rem 0 40rem;
+    padding-top: 6rem;
+    padding-left: 8rem;
+    box-sizing: content-box;
+    background-color: #27231d;
+    border-radius: 1rem;
+    height: 40%;
+}
+
+.container-login h2 {
+    font-weight: 700;
+    font-size: 50px;
+    padding-left: 4.75rem;
+    color: #e9ded6;
+}
+
+.login-boxed {
+    padding-left: 1.5rem;
+}
+
+.login-boxed input {
+    height: 40px;
+    width: 250px;
+    background-color: #645f56;
+    color: #e9ded6;
+    padding-left: 5px;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+}
+
+::placeholder {
+    color:#e9ded6;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.submit {
+    margin-left: 4.75rem;
+}
+
+.submit button{
+    width: 100px;
+    height: 30px;
+    background-color: #645f56;
+    font-family: 'Work Sans', sans-serif;
+    font-size: large;
+    color: #e9ded6;
+    border-radius: 5px;
+    border-color: #645f56;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    
+}
+
+.submit button:hover {
+    border-color: #e9ded6;
+}
+
+.container-login a {
+    padding-left: 1.5rem;
+    color: #e9ded6;
+    transition: all 0.2s ease;
+}
+
+.container-login a:hover {
+    color: whitesmoke;
+}
+
+.notification {
+    margin-top: 20px;
+    margin-left: 1.5rem;
+    color:#e9ded6;
+}
+/* LOGIN */
+
 
 footer {
     background-color: #27231d;
@@ -162,7 +246,7 @@ footer p {
 
 footer a {
     transition: color 0.2s ease;
-    color: rgb(221, 221, 221);
+    color: #e9ded6;
     text-decoration: none;
 }
 
