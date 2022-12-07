@@ -151,6 +151,75 @@ nav {
 
 
 
+/* SIGNUP */
+.container-signup {
+    margin: 17rem 40rem 0 40rem;
+    padding-top: 4rem;
+    padding-left: 8rem;
+    box-sizing: content-box;
+    background-color: #27231d;
+    border-radius: 1rem;
+    height: 45%;
+}
+
+.container-signup h2 {
+    font-weight: 700;
+    font-size: 45px;
+    padding-left: 0.75rem;
+    color: #e9ded6;
+}
+
+.signup-boxed {
+    padding-left: 1.5rem;
+}
+
+.signup-boxed input {
+    height: 40px;
+    width: 250px;
+    background-color: #645f56;
+    color: #e9ded6;
+    padding-left: 5px;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+}
+
+::placeholder {
+    color:#e9ded6;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.submit-signup {
+    margin-left: 5rem;
+}
+
+.submit-signup button {
+    width: 100px;
+    height: 30px;
+    background-color: burlywood;
+    font-family: 'Work Sans', sans-serif;
+    font-size: large;
+    color: #27231d;
+    border-radius: 5px;
+    border-color: burlywood;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    
+}
+
+.submit-signup button:hover {
+    border-color: whitesmoke;
+}
+
+.notification {
+    margin-top: 20px;
+    margin-left: 1.5rem;
+    color:#e9ded6;
+}
+/* SIGNUP */
+
+
+
 /* LOGIN */
 .container-login {
     margin: 17rem 40rem 0 40rem;
@@ -184,31 +253,26 @@ nav {
     border: none;
 }
 
-::placeholder {
-    color:#e9ded6;
-    font-family: 'Work Sans', sans-serif;
-}
-
-.submit {
+.submit-login {
     margin-left: 4.75rem;
 }
 
-.submit button{
+.submit-login button {
     width: 100px;
     height: 30px;
-    background-color: #645f56;
+    background-color: burlywood;
     font-family: 'Work Sans', sans-serif;
     font-size: large;
-    color: #e9ded6;
+    color: #27231d;
     border-radius: 5px;
-    border-color: #645f56;
+    border-color: burlywood;
     transition: border-color 0.2s;
     cursor: pointer;
     
 }
 
-.submit button:hover {
-    border-color: #e9ded6;
+.submit-login button:hover {
+    border-color: whitesmoke;
 }
 
 .container-login a {
@@ -219,12 +283,6 @@ nav {
 
 .container-login a:hover {
     color: whitesmoke;
-}
-
-.notification {
-    margin-top: 20px;
-    margin-left: 1.5rem;
-    color:#e9ded6;
 }
 /* LOGIN */
 
