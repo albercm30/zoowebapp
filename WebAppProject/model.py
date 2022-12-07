@@ -19,7 +19,7 @@ class Animal(db.Model):
 
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(64), nullable=False)
+    title = db.Column(db.String(64), nullable=False, unique=True)
     description = db.Column(db.VARCHAR(500), nullable=False)
     minimum_age = db.Column(db.Integer, default=3)
     is_marked = db.Column(db.Boolean, nullable=False, default=False)
