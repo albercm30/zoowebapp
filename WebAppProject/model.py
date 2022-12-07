@@ -16,7 +16,6 @@ class Animal(db.Model):
     description = db.Column(db.VARCHAR(500),  nullable=False)
     activities = db.relationship('Activity', backref='animal', lazy=True)
 
-
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), nullable=False)
@@ -32,7 +31,6 @@ class Scheduledactivity(db.Model):
     duration = db.Column(db.Integer,  nullable=False)
     places = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
-
 
 class Reservation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
