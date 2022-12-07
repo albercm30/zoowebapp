@@ -32,8 +32,8 @@ def activities():
     cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
     return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
 
-@bp.route("/activity",methods=["POST"])
-# @flask_login.login_required
+@bp.route("/activity/",methods=["POST"])
+@flask_login.login_required
 def add_activity():
     title = request.form.get("title")
     minimum_age = request.form.get("minimum_age")
@@ -45,7 +45,9 @@ def add_activity():
     activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
     cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
     return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
-"""
+
+@bp.route("/activitys",methods=["POST"])
+@flask_login.login_required
 def add_schedule():
     # activity_title, date, starting_time,duration, places, price  
     activity_title = request.form.get("activity_title")
@@ -56,7 +58,7 @@ def add_schedule():
     duration = request.form.get("duration")
     places = request.form.get("places")
     price = request.form.get("price")
-    new_schedule= model.Activity(activity_id=activity_id, date=date, stating_time=starting_time,
+    new_schedule= model.Scheduledactivity(activity_id=activity_id, date=date, stating_time=starting_time,
     duration=duration, places=places, price=price)
     db.session.add(new_schedule)
     db.session.commit()
@@ -64,4 +66,5 @@ def add_schedule():
     activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
     cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
     return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
-    """
+
+    
