@@ -11,6 +11,32 @@
     <p>We offer a number of different activities that allow you to get involved with our animals.</p>
 </div>
 
+<div>
+<h2>Here are the currently available activities</h2>
+{% for activity in activities %}
+    {% if activity.is_marked %}
+        <div class="activity">
+            <h3>{{ activity.title }}</h3>
+                <div class="description">
+                    <p>{{ activity.description }}</p>
+                </div>
+                {% for act in cheduleds %}
+                        {% if act.activity_id == activity.id  %}
+                            <p>A session is scheduled the {{act.date}} starting at {{act.stating_time}}</p> 
+                        {%endif%}  
+                {% endfor %}
+            <div>
+                <img class="image" src=.../static/img/...>
+            </div>
+            <div class="signup">
+                
+            </div>
+        </div>
+        {%endif%} 
+    {%endfor%} 
+    
+</div>
+
 <div class="container-animals">
     <h2>Some animals you can find</h2>
     <div class="img-animals">
