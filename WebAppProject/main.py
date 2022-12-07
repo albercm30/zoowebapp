@@ -46,7 +46,7 @@ def add_activity():
     cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
     return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
 
-@bp.route("/activitys",methods=["POST"])
+@bp.route("/activitysched",methods=["POST"])
 @flask_login.login_required
 def add_schedule():
     # activity_title, date, starting_time,duration, places, price  
@@ -68,3 +68,20 @@ def add_schedule():
     return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
 
     
+@bp.route("/activitymark",methods=["POST"])
+@flask_login.login_required
+def mark_activity():
+    # activity_title, date, starting_time,duration, places, price  
+    activity_title = request.form.get("activity_title")
+    activity = model.Activity.query.filter_by(title=activity_title).first()
+    is_it_marked = request.form.get("is_it_marked")
+    if is_it_marked == "Yes":
+        is_it_marked = True
+    else :
+        is_it_marked = False
+    setattr(activity, 'is_marked', is_it_marked)
+    db.session.commit()
+    flash("You've successfully added scheduled the activityy")
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
