@@ -28,7 +28,26 @@
              </nav>
         </header>
         <section class="content">
-            {% block content %}{% endblock %}
+            <div class="container-title">
+                <h1 class="title">Zoological Park</h1>
+            </div>
+            
+            <div class="container-middle">
+                <a href="{{ url_for('main.activities') }}"><img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon"/></a>
+                <h2>Activities</h2>
+                <p>We offer a number of different activities that allow you to get involved with our animals.</p>
+            </div>
+            
+            <div class="container-animals">
+                <h2>Some animals you can find</h2>
+                <div class="img-animals">
+                    <a href="{{ url_for('main.animals') }}"><img src="{{ url_for('static', filename='camel.jpg') }}" alt="camel" class="camel" /></a>
+                    <a href="{{ url_for('main.animals') }}"><img src="{{ url_for('static', filename='polar-bear.png') }}" alt="polar bear" class="polar-bear" /></a>
+                    <a href="{{ url_for('main.animals') }}"><img src="{{ url_for('static', filename='deer.jpg') }}" alt="deer" class="deer" /></a>
+                    <a href="{{ url_for('main.animals') }}"><img src="{{ url_for('static', filename='stingray.jpg') }}" alt="stingray" class="stingray"/></a>
+                </div>
+            </div>
+            <!-- {% block content %}{% endblock %} -->
         </section>
         
         <footer>
