@@ -25,7 +25,9 @@
 </div>
     {% endfor %}
 
+{% if current_user.is_manager %}
 <div>
+     
     <h3> Adding activities :</h3>
     <form action="{{ url_for('main.add_activity') }}" method="post">
         <div><label>Title of the activity: <input type="text" name="title" required/></label></div>
@@ -63,4 +65,5 @@
     <h3> Marking activities :</h3>
 
 </div>
+{% endif %}
 {% endblock %}
