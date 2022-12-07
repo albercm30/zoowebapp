@@ -311,3 +311,128 @@ footer a {
 footer a:hover {
     color: #e9ded6;
 }
+
+/* ANIMAL */
+
+.container-desert {
+    background-color:darkorange;
+    height: 830px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+} 
+
+.camel img {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.camel p {
+    padding-left: 5ex;
+    margin-bottom: 20px;
+} 
+
+.snake img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.snake p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+.container-aquatic { 
+    background-color: aqua;
+    height: 830px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+} 
+
+.stingray img {
+    height: 300px;
+    padding-right: 200px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+} 
+
+.stingray p {
+    margin-bottom: 1px;
+} 
+
+.dolphin img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.dolphin p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+.container-ice {
+    background-color: ghostwhite;
+    height: 830px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+} 
+
+.polar-bear img {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.polar-bear p {
+    padding-left: 5ex;
+    margin-bottom: 20px;
+} 
+
+.penguin img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.penguin p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+.container-forest {
+    background-color: darkgreen;
+    height: 870px;
+    margin-top: 60px;
+    margin-bottom: 170px;
+} 
+
+.deer img {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.deer p {
+    padding-left: 5ex;
+    margin-bottom: 20px;
+} 
+
+.falcon img {
+    height: 300px;
+    padding-left: 10ex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.falcon p {
+    padding-left: 10ex;
+    margin-bottom: 20px;
+} 
+
+/* ANIMAL */
+
