@@ -25,6 +25,13 @@ def animals():
 def customers():
     return render_template("main/customer.html")
 
+@bp.route("/activity")
+# @flask_login.login_required
+def activities():
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    return render_template("main/activity.html",activities=activities, cheduleds=cheduleds)
+
 @bp.route("/activity",methods=["POST"])
 # @flask_login.login_required
 def add_activity():
