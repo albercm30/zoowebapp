@@ -35,7 +35,7 @@
 
 
             <div class="activity-manager">
-                <h2>ACTIVITIES</h2>
+                <h2 class="title-act">ACTIVITIES</h2>
                 <!-- {% if current_user.is_manager %}
                     {% for activity in activities %} -->
                 
@@ -57,7 +57,7 @@
                 
                 <div class="add-activity">
                     <form action="{{ url_for('main.add_activity') }}" method="post">
-                        <h3> Adding activities:</h3>
+                        <h3>Adding activities:</h3>
                         <ul class="add">
                             <li><label>Title of the activity: <input type="text" name="title" required/></label></li>
                             <li><label>Minimum age: <input type="number" name="minimum_age" class="min-age" required/></label></li>
@@ -112,9 +112,9 @@
                     </form>
                 </div>
                 <!-- {% else %} -->
-                <br>
-                <br>
-                <h2> For managers only</h2>
+                <br/>
+                <br/>
+                <h2 class="manager-only">FOR MANAGERS ONLY</h2>
                 <!-- {% endif %} -->
             </div>
             <!-- {% endblock %} -->

@@ -313,7 +313,7 @@ nav {
     margin-left: 40rem;
 }
 
-.activity-manager h2 {
+.title-act {
     font-size: 50px;
     padding-left: 8rem;
 }
@@ -378,7 +378,12 @@ nav {
     border-width: 1px;
     border-radius: 5px;
     font-size: 15px;
+    font-weight: 600;
     font-family: 'Work Sans', sans-serif;
+}
+
+.manager-only {
+    font-size: 50px;
 }
 /* ACTIVITY */
 
