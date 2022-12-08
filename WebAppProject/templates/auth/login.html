@@ -15,9 +15,9 @@
     <br/>
     <a href="{{ url_for('auth.signup') }}">Sign up here</a>
     {% with messages = get_flashed_messages() %}
-    {% for message in messages %}
-    <p class="notification">{{ message }}</p>
+        {% for message in messages %}
+            <p class="notification">{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
 </div>
-{% endfor %}
-{% endwith %}
 {% endblock %}

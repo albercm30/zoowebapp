@@ -12,7 +12,22 @@ a {
     color: #27231d;
 }
 
+input {
+    font-family: 'Work Sans', sans-serif;
+}
 
+button {
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+
+/* HEADER */
 nav {
     display:grid;
     grid-template-columns: 1fr auto;
@@ -37,7 +52,6 @@ nav {
     display:grid;
     grid-template-columns: repeat(5,auto);
     padding-right: 23rem;
-    list-style-type: none;
 }
 
 .barnav li{
@@ -55,10 +69,10 @@ nav {
     color:white;
 }
 
-
 .content{
     height: 3000px;
 }
+/* HEADER */
 
 
 
@@ -74,6 +88,7 @@ nav {
 .title {
     padding-top: 15rem;
     font-size: 5rem;
+    font-weight: bold;
     text-align: center;
     color: #27231d;
 }
@@ -108,40 +123,40 @@ nav {
     margin-bottom: 5rem;
 }
 
-.container-animals {
+.container-animals-idx {
     margin-top: 10rem;
     margin-left: 22rem;
 }
 
-.container-animals h2 {
+.container-animals-idx h2 {
     font-size: 50px;
     margin-left: 18rem;
     color: #27231d;
 }
 
-.img-animals {
+.img-animals-idx {
     margin-top: 60px;
 }
 
-.img-animals img{
+.img-animals-idx img{
     width: 500px;
     border-radius: 2rem;
 }
 
-.camel {
+.camel-idx {
     margin-left: 40px;
 }
 
-.polar-bear {
+.polar-bear-idx {
     margin-left: 90px;
 }
 
-.deer {
+.deer-idx {
     margin-left: 40px;
     margin-top: 50px;
 }
 
-.stingray {
+.stingray-idx {
     margin-left: 90px;
     margin-top: 50px;
 }
@@ -175,7 +190,6 @@ nav {
     height: 40px;
     width: 250px;
     background-color: #645f56;
-	font-family: 'Work Sans', sans-serif;
     color: #e9ded6;
     padding-left: 5px;
     font-size: large;
@@ -262,14 +276,10 @@ nav {
     width: 100px;
     height: 30px;
     background-color: burlywood;
-    font-family: 'Work Sans', sans-serif;
     font-size: large;
     color: #27231d;
-    border-radius: 5px;
     border-color: burlywood;
-    transition: border-color 0.2s;
-    cursor: pointer;
-    
+    transition: border-color 0.2s;    
 }
 
 .submit-login button:hover {
@@ -297,33 +307,84 @@ nav {
 
 
 
-footer {
-    background-color: #27231d;
-    padding: 3rem;
-    color: burlywood;
-    margin-top: 2000px;
+/* ACTIVITY */
+.activity-manager {
+    margin-top: 15rem;
+    margin-left: 40rem;
 }
 
-footer small {
-    text-align: right;
+.activity-manager h2 {
+    font-size: 50px;
+    padding-left: 8rem;
 }
 
-footer p {
-    margin: 0rem;
+.activity-manager h3 {
+    font-size: 30px;
 }
 
-footer a {
-    transition: color 0.2s ease;
-    color: #e9ded6;
-    text-decoration: none;
+.activity {
+    margin-top: 50px;
 }
 
-footer a:hover {
-    color: #e9ded6;
+.activity p {
+    font-size: 20px;
+    padding-left: 3.3rem;
 }
+
+.add-activity, .sch-activity, .mark-activity {
+    margin-top: 5rem;
+}
+
+.activity-manager li {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.activity-manager input {
+    height: 20px;
+    border-width: 1px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.activity-manager textarea {
+    height: 100px;
+    width: 400px;
+    border-width: 1px;
+    border-radius: 5px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.add ::placeholder{
+    font-weight: 500;
+    color:#27231d;
+}
+
+.min-age, .price, .hours, .places {
+    width: 50px;
+}
+
+.notification-add {
+    margin-left: 48px;
+    margin-top:20px;
+    font-size: 20px;
+}
+
+.activity-manager select {
+    height: 25px;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 'Work Sans', sans-serif;
+}
+/* ACTIVITY */
+
+
 
 /* ANIMAL */
-
 .container-desert {
     background-color:darkorange;
     height: 830px;
@@ -443,6 +504,35 @@ footer a:hover {
     padding-left: 10ex;
     margin-bottom: 20px;
 } 
-
 /* ANIMAL */
+
+
+/* FOOTER */
+footer {
+    background-color: #27231d;
+    padding: 3rem;
+    color: burlywood;
+    margin-top: 2000px;
+}
+
+footer small {
+    text-align: right;
+}
+
+footer p {
+    margin: 0rem;
+}
+
+footer a {
+    transition: color 0.2s ease;
+    color: #e9ded6;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e9ded6;
+}
+/* FOOTER */
+
+
 
