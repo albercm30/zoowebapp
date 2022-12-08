@@ -19,6 +19,7 @@
                     <li><a href="{{ url_for('main.activities') }}">Activities</a></li> 
 
                     {% if current_user.is_authenticated: %}
+                    <li><a href="{{ url_for('main.customers') }}">Bookings</a></li> 
                     <li><a href="{{ url_for('auth.logout') }}">Logout</a></li> 
                     {% else %}
                     <li><a href="{{ url_for('auth.login') }}">Login</a></li>
