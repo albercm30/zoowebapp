@@ -1,87 +1,87 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section>
-    <h2 class="heading">ACTIVITIES</h2>
-</section>
-{% if current_user.is_manager %}
-    {% for activity in activities %}
-
-    <div class="activity">
-        <h3>{{ activity.title }}</h3>
-            <div class="description">
-                <p>{{ activity.description }}</p>
-            </div>
-            {% for act in cheduleds %}
+<div class="activity-manager">
+    <h2 class="title-act">ACTIVITIES</h2>
+    {% if current_user.is_manager %}
+        {% for activity in activities %}
+    
+        <div class="activity">
+            <h3>{{ activity.title }}</h3>
+            <p>{{ activity.description }}</p>
+            {% for act in scheduleds %}
                     {% if act.activity_id == activity.id  %}
                         <p>A session is scheduled the {{act.date}} starting at {{act.stating_time}}</p> 
                     {%endif%}  
             {% endfor %}
-        <div>
             <img class="image" src=.../static/img/...>
+            <div class="signup">
+                
+            </div>
         </div>
-        <div class="signup">
-            
-        </div>
-    </div>
-
-    {% endfor %}
-
-<div>
-     
-    <h3> Adding activities :</h3>
-    <form action="{{ url_for('main.add_activity') }}" method="post">
-        <div><label>Title of the activity: <input type="text" name="title" required/></label></div>
-        <div><label>Minimum age : <input type="number" name="minimum_age" required/></label></div>
-        <p><textarea rows=5 cols=60 placeholder="Add a description" name="description" required></textarea></p>
-        <div><input type="submit" value="Submit"/></div>
-    </form>
-    {% with messages = get_flashed_messages() %}
-        {% for message in messages %}
-            <div class="notification">{{ message }}</div>
+    
         {% endfor %}
-    {% endwith %}
-
-</div>
-
-<div>
-    <h3> Sheduling activities :</h3>
-   
-    <form action="{{ url_for('main.add_schedule') }}" method="post">
-        <div><label>Activity:</label></div>
-        <select name="activity_title" >
-            {% for activity in activities %}
-            <option>{{ activity.title}}</option>
+    
+    <div class="add-activity">
+        <form action="{{ url_for('main.add_activity') }}" method="post">
+            <h3>Adding activities:</h3>
+            <ul class="add">
+                <li><label>Title of the activity: <input type="text" name="title" required/></label></li>
+                <li><label>Minimum age: <input type="number" name="minimum_age" class="min-age" required/></label></li>
+                <li><textarea rows=5 cols=60 placeholder="Add a description" name="description" class="description" required></textarea></li>
+                <li><button type="submit">Submit</button></li>
+            </ul>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <div class="notification-add">{{ message }}</div>
             {% endfor %}
-        </select>
-        <div><label>Date: <input type="date" name="date" required/></label></div>
-        <div><label>Starting time : <input type="time" name="starting_time" required/></label></div>
-        <div><label>Duration in hours : <input type="number" name="duration" required/></label></div>
-        <div><label>Number of places: <input type="number" name="places" required/></label></div>
-        <div><label>Price: <input type="number" name="price" required/></label></div>
-        <div><input type="submit" value="Add"/></div>
-    </form>
+        {% endwith %}
+    
+    </div>
+    
+    <div class="sch-activity">
+        <form action="{{ url_for('main.add_schedule') }}" method="post">
+            <h3> Scheduling activities:</h3>
+            <ul>
+                <li><label>Activity:</label>
+                    <select name="activity_title" >
+                        {% for activity in activities %}
+                        <option>{{ activity.title }}</option>
+                        {% endfor %}
+                    </select></li>
+                <li><label>Date: <input type="date" name="date" required/></label></li>
+                <li><label>Starting time : <input type="time" name="starting_time" required/></label></li>
+                <li><label>Duration in hours: <input type="number" name="duration" class="hours" required/></label></li>
+                <li><label>Number of places: <input type="number" name="places" class="places" required/></label></li>
+                <li><label>Price: <input type="number" name="price" class="price" required/></label></li>
+                <li><button type="submit">Add</button></li>
+            </ul>
+        </form>
+    </div>
+    <div class="mark-activity">
+        <form action="{{ url_for('main.mark_activity') }}" method="post">
+            <h3>Marking activities:</h3>
+            <ul>
+                <li><p>Should the activity be published?</p></li>
+                <li><select name="activity_title" >
+                    {% for activity in activities %}
+                        <option>{{ activity.title}}</option>
+                    {% endfor %}
+                    </select>
+                
+                    <select name="is_it_marked" >
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></li>
+                <li><button type="submit">Add</button></li>
+            </ul>
+        </form>
+    </div>
+    {% else %}
+    <br/>
+    <br/>
+    <h2 class="manager-only">FOR MANAGERS ONLY</h2>
+    {% endif %}
 </div>
-<div>
-    <form action="{{ url_for('main.mark_activity') }}" method="post">
-    <h3> Marking activities :</h3>
-    <p>Should the activity be published?</p>
-        <select name="activity_title" >
-            {% for activity in activities %}
-                <option>{{ activity.title}}</option>
-            {% endfor %}
-        </select>
-        
-        <select name="is_it_marked" >
-            <option>Yes</option>
-            <option>No</option>
-        </select>
-        <div><input type="submit" value="Add"/></div>
-    </form>
-</div>
-{% else %}
-<br>
-<br>
-<h2> For managers only</h2>
-{% endif %}
 {% endblock %}
