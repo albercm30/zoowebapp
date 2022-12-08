@@ -22,12 +22,12 @@ $(window).on("load", function() {
     function deleteDates(id) {
         var other_n = other_nodes(id);
         for (n in other_n) {
-            console.log(other_n[n]);
             $("#d" + other_n[n]).empty()
         } 
     } 
     function displayDates(node,node_target,reference_id,id) {
         node.click(function(){
+            node_target.empty()
                 for (activity in act_dates) {
                     if (act_id[activity]===reference_id){
                         var limit = act_dates[activity].length;
@@ -39,8 +39,7 @@ $(window).on("load", function() {
                     
  
                 }; 
-            deleteDates(id);
-                
+            deleteDates(id);   
         });
 
     };
