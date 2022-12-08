@@ -9,6 +9,23 @@ $(window).on("load", function() {
     */
     //var act_booked = $("#act_booked");
 
+    function other_nodes(id) {
+        var other_n =[];
+        for (act in act_dates) {
+            if (act_id[act]!==id){
+                other_n.push(act_id[act]);
+            } 
+        } 
+        return other_n;
+    } 
+
+    function deleteDates(id) {
+        var other_n = other_nodes(id);
+        for (n in other_n) {
+            console.log(other_n[n]);
+            $("#d" + other_n[n]).empty()
+        } 
+    } 
     function displayDates(node,node_target,reference_id,id) {
         node.click(function(){
                 for (activity in act_dates) {
@@ -21,10 +38,12 @@ $(window).on("load", function() {
                     } ;
                     
  
-                };       
+                }; 
+            deleteDates(id);
+                
         });
-    };
 
+    };
 
 
     for (act in act_dates) {
@@ -32,9 +51,7 @@ $(window).on("load", function() {
         var reference_id = act_id[act];
         var node_source = $("#r" + reference_id);
         var node_target =  $("#d" + reference_id);
-        displayDates(node_source,node_target,reference_id,id)
-        
-
+        displayDates(node_source,node_target,reference_id,id)  
         
     } 
             
