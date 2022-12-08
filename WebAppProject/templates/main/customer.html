@@ -17,12 +17,16 @@
 <h2>Book an activities</h2>
 <form action="{{ url_for('main.booking') }}" method="post" id="act_booked"></form>
     {% for activity in act_dates %}
-    <input type="radio" id={{act_id[activity]}}>
-    <label for="html">{{activity}}</label><br>
+    <div>
+        <input name="radio" type="radio" id=r{{act_id[activity]}}>
+        <label for="html">{{activity}}</label><br>
+        <select name="date_chosen" id=d{{act_id[activity]}}>
+        </select>
+    </div>
+    
     {% endfor %}  
 
-    <select id="date_chosen",name="date_chosen" >
-    </select>
+    
 
     <div><label>How many places do you want ? <input type="number" name="places_booked" required/></label></div>
     <div><input type="submit" value="Submit"/></div>
