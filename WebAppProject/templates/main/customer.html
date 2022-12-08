@@ -5,18 +5,20 @@
 <h1>Customer</h1>
 
 <h2>Book an activities</h2>
-{% for activity in activities %}
-    {% for act in cheduleds %}
-        {% if act.activity_id == activity.id  %}
-        <select name="activity_title_booked" >
-            {% for activity in activities %}
-            <option>{{ activity.title}}</option>
-            {% endfor %}
-        </select>
-        {%endif%} 
-    {% endfor %}
-{% endfor %}
-<form action="{{ url_for('main.customers') }}" method="post">
+<form action="{{ url_for('main.booking') }}" method="post"></form>
+    <select name="activity_title_booked" >
+    {% for activity in act_dates %}
+            <option>
+                {{ activity}}
+            </option>
+            {% for date in act_dates[activity]  %}
+            <option>
+                {{ date}}
+            </option>  
+    {% endfor %} 
+    {% endfor %}   
+</select>
+        
     <div><label>How many places do you want ? <input type="number" name="places_booked" required/></label></div>
     <div><input type="submit" value="Submit"/></div>
 </form>

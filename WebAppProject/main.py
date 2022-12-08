@@ -27,11 +27,32 @@ def animals():
 def customers():
     activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
     cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
-    return render_template("main/customer.html",activities=activities,cheduleds=cheduleds)
+    # for each activity title let's associate all of its available dates from the scheduled activities
+    act_dates ={}
+    for activity in activities:
+            act_dates[activity.title]=[] 
+
+    for activity in activities:
+        for scheduled in cheduleds:
+            if activity.id == scheduled.activity_id:
+                act_dates[activity.title].append(scheduled.date)
+    print(act_dates)
+    return render_template("main/customer.html",activities=activities,cheduleds=cheduleds,act_dates=act_dates)
 
 @bp.route("/customer",methods=["POST"])
 @flask_login.login_required
 def booking():
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    scheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    # for each activity title let's associate all of its available dates from the scheduled activities
+    act_dates ={}
+    for activity in activities:
+            act_dates[activity.title]=[] 
+
+    for activity in activities:
+        for scheduled in scheduleds:
+            if activity.id == scheduled.activity_id:
+                act_dates[activity.title].append(scheduled.date)
     activity_title_booked = request.form.get("activity_title_booked")
     activity = model.Scheduledactivity.query.filter_by(title=activity_title_booked).first()
     activity_id = activity.id
@@ -45,9 +66,7 @@ def booking():
         db.session.add(new_reservation)
         setattr(activity, 'places', activity.places - places_booked)
         db.session.commit()
-    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
-    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
-    return render_template("main/customer.html",activities=activities,cheduleds=cheduleds)
+    return render_template("main/customer.html",activities=activities,act_dates=act_dates,scheduleds=scheduleds)
 
 @bp.route("/activity")
 # @flask_login.login_required
