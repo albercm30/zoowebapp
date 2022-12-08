@@ -23,7 +23,7 @@ def animals():
     return render_template("main/animal.html")
 
 @bp.route("/customer")
-# @flask_login.login_required
+@flask_login.login_required
 def customers():
     return render_template("main/customer.html")
 
