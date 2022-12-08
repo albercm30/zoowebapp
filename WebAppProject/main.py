@@ -25,22 +25,29 @@ def animals():
 @bp.route("/customer")
 @flask_login.login_required
 def customers():
-    return render_template("main/customer.html")
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    return render_template("main/customer.html",activities=activities,cheduleds=cheduleds)
 
 @bp.route("/customer",methods=["POST"])
 @flask_login.login_required
-def customers():
+def booking():
     activity_title_booked = request.form.get("activity_title_booked")
-    activity = model.Activity.query.filter_by(title=activity_title_booked).first()
+    activity = model.Scheduledactivity.query.filter_by(title=activity_title_booked).first()
     activity_id = activity.id
     places_booked = request.form.get("places_booked")
-    date_time = 0
-    new_reservation = model.Reservation(user_id=current_user,activity_id=activity_id,places=places_booked,
-    date=date_time)
-    db.session.add(new_reservation)
-   # update places  
-    db.session.commit()
-    return render_template("main/customer.html")
+    date_time = datetime.datetime.now(dateutil.tz.tzlocal())
+    if places_booked > activity.places:
+        flash("There are no more available places")
+    else :
+        new_reservation = model.Reservation(user_id=current_user,activity_id=activity_id,places=places_booked,
+        date=date_time)
+        db.session.add(new_reservation)
+        setattr(activity, 'places', activity.places - places_booked)
+        db.session.commit()
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    return render_template("main/customer.html",activities=activities,cheduleds=cheduleds)
 
 @bp.route("/activity")
 # @flask_login.login_required
