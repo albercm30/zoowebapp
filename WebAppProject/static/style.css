@@ -310,12 +310,12 @@ nav {
 /* ACTIVITY */
 .activity-manager {
     margin-top: 15rem;
-    margin-left: 40rem;
+    margin-left: 30rem;
 }
 
 .title-act {
     font-size: 50px;
-    padding-left: 8rem;
+    padding-left: 18rem;
 }
 
 .activity-manager h3 {
@@ -328,7 +328,6 @@ nav {
 
 .activity p {
     font-size: 20px;
-    padding-left: 3.3rem;
 }
 
 .add-activity, .sch-activity, .mark-activity {
@@ -358,7 +357,7 @@ nav {
     font-size: 15px;
 }
 
-.add ::placeholder{
+.add ::placeholder {
     font-weight: 500;
     color:#27231d;
 }
@@ -384,6 +383,7 @@ nav {
 
 .manager-only {
     font-size: 50px;
+	margin-left: 10rem;
 }
 /* ACTIVITY */
 
@@ -538,6 +538,3 @@ footer a:hover {
     color: #e9ded6;
 }
 /* FOOTER */
-
-
-
