@@ -30,12 +30,16 @@ def customers():
     # for each activity title let's associate all of its available dates from the scheduled activities
     act_dates ={}
     for activity in activities:
-            act_dates[activity.title]=[] 
+        for scheduled in cheduleds:
+            if activity.id == scheduled.activity_id:
+                if activity.is_marked:
+                    act_dates[activity.title]=[] 
 
     for activity in activities:
         for scheduled in cheduleds:
             if activity.id == scheduled.activity_id:
-                act_dates[activity.title].append(scheduled.date)
+                if activity.is_marked:
+                    act_dates[activity.title].append(scheduled.date)
     print(act_dates)
     return render_template("main/customer.html",activities=activities,cheduleds=cheduleds,act_dates=act_dates)
 
