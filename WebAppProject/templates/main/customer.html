@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src={{ url_for('static', filename='booking.js')}}></script>
+    <script type="text/javascript">
+        var act_dates = {{ act_dates|tojson }}
+    </script>
+    
+</head>
+
 
 <h1>Customer</h1>
 
 <h2>Book an activities</h2>
 <form action="{{ url_for('main.booking') }}" method="post"></form>
-    <select name="activity_title_booked" >
+    <select id="accessories" name="activity_title_booked" >
     {% for activity in act_dates %}
             <option>
                 {{ activity}}
             </option>
+        </select>
             {% for date in act_dates[activity]  %}
             <option>
                 {{ date}}
