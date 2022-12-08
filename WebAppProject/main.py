@@ -27,6 +27,21 @@ def animals():
 def customers():
     return render_template("main/customer.html")
 
+@bp.route("/customer",methods=["POST"])
+@flask_login.login_required
+def customers():
+    activity_title_booked = request.form.get("activity_title_booked")
+    activity = model.Activity.query.filter_by(title=activity_title_booked).first()
+    activity_id = activity.id
+    places_booked = request.form.get("places_booked")
+    date_time = 0
+    new_reservation = model.Reservation(user_id=current_user,activity_id=activity_id,places=places_booked,
+    date=date_time)
+    db.session.add(new_reservation)
+   # update places  
+    db.session.commit()
+    return render_template("main/customer.html")
+
 @bp.route("/activity")
 # @flask_login.login_required
 def activities():

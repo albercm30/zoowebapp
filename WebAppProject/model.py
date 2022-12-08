@@ -37,8 +37,7 @@ class Reservation(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     activity_id = db.Column(db.Integer, db.ForeignKey('scheduledactivity.id'), nullable=False)
     places = db.Column(db.Integer, nullable=False)
-    date = db.Column(db.Date(), nullable=False)
-    duration = db.Column(db.Integer,  nullable=False)
-    places = db.Column(db.Integer, nullable=False) 
+    date = db.Column(db.DateTimes(), nullable=False)
+
 
 

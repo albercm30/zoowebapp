@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section>
-    <h1>Customer</h1>
-</section>
+
+<h1>Customer</h1>
+
+<h2>Book an activities</h2>
+<form action="{{ url_for('main.customers') }}" method="post">
+    <div><label>Choose your activity:</label></div>
+        <select name="activity_title_boked" >
+            {% for activity in activities %}
+            <option>{{ activity.title}}</option>
+            {% endfor %}
+        </select>
+    <div><label>How many places do you want ? <input type="number" name="places_booked" required/></label></div>
+    <div><input type="submit" value="Submit"/></div>
+</form>
+
+
+<h2>Your current bookings</h2>
+
 {% endblock %}
