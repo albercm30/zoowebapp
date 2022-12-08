@@ -13,7 +13,9 @@ bp = Blueprint("main", __name__)
 @bp.route("/")
 # @flask_login.login_required
 def index():
-    return render_template("main/index.html")
+    activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
+    cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    return render_template("main/index.html",activities=activities,cheduleds=cheduleds)
 
 @bp.route("/animals")
 # @flask_login.login_required

@@ -4,30 +4,32 @@
 <section>
     <h2 class="heading">ACTIVITIES</h2>
 </section>
-
-{% for activity in activities %}
-{% if activity.is_marked %}
-<div class="activity">
-    <h3>{{ activity.title }}</h3>
-        <div class="description">
-            <p>{{ activity.description }}</p>
-        </div>
-        {% for act in cheduleds %}
-                {% if act.activity_id == activity.id  %}
-                    <p>A session is scheduled the {{act.date}} starting at {{act.stating_time}}</p> 
-                {%endif%}  
-        {% endfor %}
-    <div>
-        <img class="image" src=.../static/img/...>
-    </div>
-    <div class="signup">
-        
-    </div>
-</div>
-{%endif%} 
-{% endfor %}
-
 {% if current_user.is_manager %}
+    {% for activity in activities %}
+    
+        
+    <div class="activity">
+        <h3>{{ activity.title }}</h3>
+            <div class="description">
+                <p>{{ activity.description }}</p>
+            </div>
+            {% for act in cheduleds %}
+                    {% if act.activity_id == activity.id  %}
+                        <p>A session is scheduled the {{act.date}} starting at {{act.stating_time}}</p> 
+                    {%endif%}  
+            {% endfor %}
+        <div>
+            <img class="image" src=.../static/img/...>
+        </div>
+        <div class="signup">
+            
+        </div>
+    </div>
+        
+        
+   
+    {% endfor %}
+
 <div>
      
     <h3> Adding activities :</h3>
@@ -80,5 +82,9 @@
         <div><input type="submit" value="Add"/></div>
     </form>
 </div>
+{% else %}
+<br>
+<br>
+<h2> For managers only</h2>
 {% endif %}
 {% endblock %}
