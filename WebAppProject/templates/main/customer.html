@@ -6,6 +6,7 @@
     <script type="text/javascript" src={{ url_for('static', filename='booking.js')}}></script>
     <script type="text/javascript">
         var act_dates = {{ act_dates|tojson }}
+        var act_id = {{ act_id|tojson }}
     </script>
     
 </head>
@@ -14,14 +15,12 @@
 <h1>Customer</h1>
 
 <h2>Book an activities</h2>
-<form action="{{ url_for('main.booking') }}" method="post"></form>
-    <select id="act_booked" name="activity_title_booked" >
+<form action="{{ url_for('main.booking') }}" method="post" id="act_booked"></form>
     {% for activity in act_dates %}
-            <option>
-                {{activity}}
-            </option>
+    <input type="radio" id={{act_id[activity]}}>
+    <label for="html">{{activity}}</label><br>
     {% endfor %}  
-    </select>
+
     <select id="date_chosen",name="date_chosen" >
     </select>
 

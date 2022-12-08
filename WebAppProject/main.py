@@ -29,19 +29,23 @@ def customers():
     cheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
     # for each activity title let's associate all of its available dates from the scheduled activities
     act_dates ={}
+    #Same but with id of the activity as a key
+    act_id = {}   
     for activity in activities:
         for scheduled in cheduleds:
             if activity.id == scheduled.activity_id:
                 if activity.is_marked:
                     act_dates[activity.title]=[] 
+                    act_id[activity.title]=[] 
 
     for activity in activities:
         for scheduled in cheduleds:
             if activity.id == scheduled.activity_id:
                 if activity.is_marked:
                     act_dates[activity.title].append(scheduled.date)
+                    act_id[activity.title]= activity.id
     print(act_dates)
-    return render_template("main/customer.html",activities=activities,cheduleds=cheduleds,act_dates=act_dates)
+    return render_template("main/customer.html",activities=activities,cheduleds=cheduleds,act_dates=act_dates,act_id=act_id)
 
 @bp.route("/customer",methods=["POST"])
 @flask_login.login_required

@@ -7,14 +7,27 @@ $(window).on("load", function() {
     };
     myFunc(act_dates);
     */
-    var act_booked = $("#act_booked").html();
-    console.log(act_booked);
+    //var act_booked = $("#act_booked");
+
+    
+        
     for (act in act_dates) {
-        console.log(act);
-        if (act === act_booked){
-            var option = $("<option>").html(act_dates[act]);
-            $("#date_chosen").append(option);
+        var reference_id = act_id[act];
+        var node = $("#" + reference_id);
+        node.prop("checked", true);
+        
+        if (node.is(':checked')){
+            console.log(node);
+            for (activity in act_dates) {
+                var option = $("<option>").html(act_dates[activity]);
+                $("#date_chosen").append(option);
+            } 
+            
+            
         } 
         
     } 
+            
+    
+     
 });
