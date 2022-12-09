@@ -5,11 +5,22 @@
     <h1>Animals</h1>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+function showText(text){
+    document.getElementById("text").innerHTML=text;
+}
+function hide(){
+    document.getElementById("text").innerHTML="";
+}
+</script>
+
 <div class="container-desert">
     <h2>Desert Biome</h2>
     <div class="camel">
-        <img src="{{ url_for('static', filename='camel.jpg') }}" alt="camel" class="camel" />
-        <p>Camels are characterized by being one of the few animals in the world that can store water.</p>
+        <img src="{{ url_for('static', filename='camel.jpg') }}" alt="camel" class="camel" id="image" onMouseOver="showText('Camels are characterized by being one of the few animals in the world that can store water.')" onMouseOut="hide();"/>
+        <div id="text"></div>        
     </div>
     <div class="snake">
         <img src="{{ url_for('static', filename='snake.jpeg') }}" alt="snake" class="snake" />
