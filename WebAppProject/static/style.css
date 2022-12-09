@@ -332,12 +332,6 @@ nav {
     font-size: 20px;
 }
 
-<<<<<<< HEAD
-/* ANIMAL */
-.title h1 {
-    color:navy
-} 
-=======
 .add-activity, .sch-activity, .mark-activity {
     margin-top: 5rem;
 }
@@ -346,7 +340,6 @@ nav {
     font-size: 20px;
     margin: 10px;
 }
->>>>>>> 69ed22683436b7086dd425b04e8b1ba375f5ff08
 
 .activity-manager input {
     height: 20px;
@@ -399,6 +392,10 @@ nav {
 
 
 /* ANIMAL */
+.title h1{
+    color:navy
+} 
+
 .container-desert {
     background-color:darkorange;
     height: 830px;
@@ -408,12 +405,13 @@ nav {
 
 .camel img {
     height: 300px;
+    padding-left: 10ex;
     margin-top: 20px;
     margin-bottom: 20px;
 } 
 
 .camel p {
-    padding-left: 5ex;
+    padding-left: 10ex;
     margin-bottom: 20px;
 } 
 
@@ -438,13 +436,14 @@ nav {
 
 .stingray img {
     height: 300px;
-    padding-right: 200px;
+    padding-left: 10ex;
     margin-top: 6px;
     margin-bottom: 20px;
 } 
 
 .stingray p {
-    margin-bottom: 1px;
+    margin-bottom: 20px;
+    padding-left: 10ex;
 } 
 
 .dolphin img {
@@ -468,12 +467,13 @@ nav {
 
 .polar-bear img {
     height: 300px;
+    padding-left: 10ex;
     margin-top: 20px;
     margin-bottom: 20px;
 } 
 
 .polar-bear p {
-    padding-left: 5ex;
+    padding-left: 10ex;
     margin-bottom: 20px;
 } 
 
@@ -498,12 +498,13 @@ nav {
 
 .deer img {
     height: 300px;
+    padding-left: 10ex;
     margin-top: 20px;
     margin-bottom: 20px;
 } 
 
 .deer p {
-    padding-left: 5ex;
+    padding-left: 10ex;
     margin-bottom: 20px;
 } 
 
