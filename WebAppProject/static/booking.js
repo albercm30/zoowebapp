@@ -22,18 +22,18 @@ $(window).on("load", function() {
     function deleteDates(id) {
         var other_n = other_nodes(id);
         for (n in other_n) {
-            $("#d" + other_n[n]).empty()
+            $("#date" + other_n[n]).empty()
         } 
     } 
-    function displayDates(node,node_target,reference_id,id) {
+    function displayDates(node,node_target1,id) {
         node.click(function(){
-            node_target.empty()
+            node_target1.empty()
                 for (activity in act_dates) {
-                    if (act_id[activity]===reference_id){
+                    if (act_id[activity]===id){
                         var limit = act_dates[activity].length;
                         for (let i = 0; i < limit; i++) {
-                            var option = $("<option>").html(act_dates[activity][i] );
-                            node_target.append(option);
+                            var date = $("<option>").html(act_dates[activity][i] );
+                            node_target1.append(date);
                         };
                     } ;
                     
@@ -47,10 +47,9 @@ $(window).on("load", function() {
 
     for (act in act_dates) {
         var id = act_id[act];
-        var reference_id = act_id[act];
-        var node_source = $("#r" + reference_id);
-        var node_target =  $("#d" + reference_id);
-        displayDates(node_source,node_target,reference_id,id)  
+        var node_source = $("#r" + id);
+        var node_target1 =  $("#date" + id);
+        displayDates(node_source,node_target1,id)  
         
     } 
             
