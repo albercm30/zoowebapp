@@ -20,39 +20,54 @@ $(window).on("load", function() {
     } 
 
     function deleteDates(id) {
-        var other_n = other_nodes(id);
-        for (n in other_n) {
-            $("#d" + other_n[n]).empty()
-        } 
+        node_target1.empty()
     } 
-    function displayDates(node,node_target,reference_id,id) {
-        node.click(function(){
-            node_target.empty()
+    function displayDates(node,node_target1) {
+        var title = node.val();
+        var id = act_id[title] 
+        console.log(id)
+            node_target1.empty()
                 for (activity in act_dates) {
-                    if (act_id[activity]===reference_id){
+                    if (act_id[activity]===id){
                         var limit = act_dates[activity].length;
                         for (let i = 0; i < limit; i++) {
-                            var option = $("<option>").html(act_dates[activity][i] );
-                            node_target.append(option);
+                            var date_string = act_dates[activity][i];
+                            var date = new Date(date_string);
+                            date = formatDate(date);
+                            var date = $("<option>").append(date);
+                            node_target1.append(date);
                         };
                     } ;
                     
  
                 }; 
-            deleteDates(id);   
-        });
 
     };
+    //function from stack overflow https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('/');
+    }
 
-
-    for (act in act_dates) {
-        var id = act_id[act];
-        var reference_id = act_id[act];
-        var node_source = $("#r" + reference_id);
-        var node_target =  $("#d" + reference_id);
-        displayDates(node_source,node_target,reference_id,id)  
+    console.log(act_dates)
+    
+    var node_source = $("#activity_title_booked");
+    var node_target1 =  $("#date_chosen");
+    node_source.change(function(){
+        displayDates(node_source,node_target1)
+    })
+      
         
-    } 
+    
             
     
      
