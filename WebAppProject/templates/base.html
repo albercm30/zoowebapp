@@ -9,12 +9,7 @@
         <link rel="stylesheet" href="../static/style.css">
         <!-- "{{ url_for('static', filename='style.css') }}" -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='booking.js')}}"></script>
-        <script type="text/javascript">
-            var act_dates = {{ act_dates|tojson }}
-            var act_id = {{ act_id|tojson }}
-        </script>
+        
     </head>
     <body>
         <header>
@@ -39,43 +34,41 @@
              </nav>
         </header>
         <section class="content">
-            <!-- {% block content %}{% endblock %} -->
+            {% block content %}{% endblock %}
             
-            <div class="customer-container">
-                <h1>Customer</h1>
-                
-                <h2>Book an activities</h2>
-                <form action="{{ url_for('main.booking') }}" method="post" id="act_booked">
-                    <div><p>Choose the activity</p></div>
-                
-                    <div>
-                        <select name="activity_title_booked" id="activity_title_booked" >    
-                        <!-- {% for activity in act_dates %}   -->
-                                <option>{{activity}}</option>
-                        <!-- {% endfor %}  -->
-                            </select>
-                    </div>
-                    <div><p>Choose the date</p>
-                        <select name="date_chosen" id="date_chosen">
+            
+            <h1>Customer</h1>
+            
+            <h2>Book an activities</h2>
+            <form action="{{ url_for('main.booking') }}" method="post" id="act_booked">
+                <div><p>Choose the activity</p></div>
+            
+                <div>
+                    <select name="activity_title_booked" id="activity_title_booked" >    
+                    {% for activity in act_dates %}  
+                            <option>{{activity}}</option>
+                    {% endfor %} 
                         </select>
-                    </div>
-                    <br>
-                    <div><label>How many places do you want ?</label><input type="number" name="places_booked" required/></div>
-                    <br>
-                    <div><input type="submit" value="Submit"/></div>
-                </form>
-                
-                <!-- {% with messages = get_flashed_messages() %} -->
-                        <!-- {% for message in messages %} -->
-                            <p class="notification">{{ message }}</p>
-                        <!-- {% endfor %} -->
-                <!-- {% endwith %} -->
-                
-                
-                <h2>Your current bookings</h2>
-            </div>
-
+                </div>
+                <div><p>Choose the date</p>
+                    <select name="date_chosen" id="date_chosen">
+                    </select>
+                </div>
+                <br>
+                <div><label>How many places do you want ?</label><input type="number" name="places_booked" required/></div>
+                <br>
+                <div><input type="submit" value="Submit"/></div>
+            </form>
             
+            {% with messages = get_flashed_messages() %}
+                    {% for message in messages %}
+                        <p class="notification">{{ message }}</p>
+                    {% endfor %}
+            {% endwith %}
+            
+            
+            <h2>Your current bookings</h2>
+
 
         </section>
         
