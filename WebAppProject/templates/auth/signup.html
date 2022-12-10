@@ -18,11 +18,9 @@
     </div>
     {% with messages = get_flashed_messages() %}
         {% for message in messages %}
-            <p class="notification">{{ message }}</p>
+            <p class="notification-signup">{{ message }}</p>
         {% endfor %}
     {% endwith %}
 </div>
 
 {% endblock %}
-
-

@@ -16,13 +16,16 @@
                 <ul class="barnav">
                     <li><a href="{{ url_for('main.index') }}">Zoo</a></li>
                     <li><a href="{{ url_for('main.animals') }}">Animals</a></li> 
-                    <li><a href="{{ url_for('main.activities') }}">Activities</a></li> 
+                    
+                    {% if current_user.is_manager %}
+                    <li><a href="{{ url_for('main.activities') }}">Activities</a></li>
+                    {% endif %}
 
                     {% if current_user.is_authenticated: %}
                     <li><a href="{{ url_for('main.customers') }}">Bookings</a></li> 
                     <li><a href="{{ url_for('auth.logout') }}">Logout</a></li> 
                     {% else %}
-                    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                    <li><a href="{{ url_for('auth.login') }}">LogIn</a></li>
                     <li><a href="{{ url_for('auth.signup') }}">SignUp</a></li>
                     {% endif %}
                 </ul>

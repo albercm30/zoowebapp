@@ -6,7 +6,11 @@
 </div>
 
 <div class="container-middle">
-    <a href="{{ url_for('main.activities') }}"><img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon"/></a>
+    {% if current_user.is_authenticated: %}
+    <a href="{{ url_for('main.customers') }}"><img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon"/></a>
+    {% else %}
+    <img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon"/>
+    {% endif %}
     <h2>Activities</h2>
     <p>We offer a number of different activities that allow you to get involved with our animals.</p>
 </div>
@@ -21,7 +25,7 @@
                     <p>{{ activity.description }}</p>
                 </div>
                 <!--
-                    {% for act in cheduleds %}
+                    {% for act in scheduleds %}
                         {% if act.activity_id == activity.id  %}
                             <p>A session is scheduled the {{act.date}} starting at {{act.stating_time}}</p> 
                         {%endif%}  
