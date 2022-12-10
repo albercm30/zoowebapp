@@ -15,22 +15,24 @@
 <h1>Customer</h1>
 
 <h2>Book an activities</h2>
-<form action="{{ url_for('main.booking') }}" method="post" id="act_booked"></form>
-    {% for activity in act_dates %}
-    <div>
-        <input name="radio" type="radio" id=r{{act_id[activity]}}>
-        <label for="html">{{activity}}</label><br>
-        <select name="date_chosen" id=date{{act_id[activity]}}>
-        </select>
-    </div>
-    
-    {% endfor %}  
+<form action="{{ url_for('main.booking') }}" method="post" id="act_booked">
+<select name="activity_title_booked" id="activity_title_booked" >    
+{% for activity in act_dates %}  
+        <option>{{activity}}</option>
+{% endfor %} 
+    </select>
 
-    
-
-    <div><label>How many places do you want ? <input type="number" name="places_booked" required/></label></div>
+    <select name="date_chosen" id="date_chosen">
+    </select>
+    <div><label>How many places do you want ?</label><input type="number" name="places_booked" required/></div>
     <div><input type="submit" value="Submit"/></div>
 </form>
+
+{% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p class="notification">{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
 
 
 <h2>Your current bookings</h2>
