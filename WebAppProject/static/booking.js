@@ -38,8 +38,6 @@ $(window).on("load", function() {
                             node_target1.append(date);
                         };
                     } ;
-                    
- 
                 }; 
 
     };
@@ -62,6 +60,7 @@ $(window).on("load", function() {
     
     var node_source = $("#activity_title_booked");
     var node_target1 =  $("#date_chosen");
+    displayDates(node_source,node_target1)
     node_source.change(function(){
         displayDates(node_source,node_target1)
     })
