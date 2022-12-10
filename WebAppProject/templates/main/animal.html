@@ -1,66 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='animal.js')}}"></script>
+</head>
+
 <div class="title">
     <h1>Animals</h1>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type="text/javascript">
-
-function showText(text){
-    document.getElementById("text").innerHTML=text;
-}
-function hide(){
-    document.getElementById("text").innerHTML="";
-}
-</script>
 
 <div class="container-desert">
     <h2>Desert Biome</h2>
     <div class="camel">
         <img src="{{ url_for('static', filename='camel.jpg') }}" alt="camel" class="camel" id="image" onMouseOver="showText('Camels are characterized by being one of the few animals in the world that can store water.')" onMouseOut="hide();"/>
-        <div id="text"></div>        
+        <div id="text-camel"></div>        
     </div>
     <div class="snake">
-        <img src="{{ url_for('static', filename='snake.jpeg') }}" alt="snake" class="snake" />
-        <p>Snakes are characterized by their slithering movement, contracting and releasing their muscles.</p>
+        <img src="{{ url_for('static', filename='snake.jpeg') }}" alt="snake" class="snake" id="image1" onMouseOver="showText2('Snakes are characterized by their slithering movement, contracting and releasing their muscles.')" onMouseOut="hide2();"/>
+        <div id="text-snake"></div>        
     </div>
 </div>
 
 <div class="container-aquatic">
     <h2>Aquatic Biome</h2>
     <div class="stingray">
-        <img src="{{ url_for('static', filename='stingray.jpg') }}" alt="stingray" class="stingray" />
-        <p>Stingrays are characterized by their sharp and lethal sting.</p>
+        <img src="{{ url_for('static', filename='stingray.jpg') }}" alt="stingray" class="stingray" id="image3" onMouseOver="showText3('Stingrays are characterized by their sharp and lethal sting.')" onMouseOut="hide3();"/>
+        <div id="text-stingray"></div>        
     </div>
     <div class="dolphin">
-        <img src="{{ url_for('static', filename='dolphin.jpeg') }}" alt="dolphin" class="dolphin" />
-        <p>Dolphins are characterized by their playful mood and their astounding intelligence.</p>
+        <img src="{{ url_for('static', filename='dolphin.jpeg') }}" alt="dolphin" class="dolphin" id="image4" onMouseOver="showText4('Dolphins are characterized by their playful mood and their astounding intelligence.')" onMouseOut="hide4();"/>
+        <div id="text-dolphin"></div>        
     </div>
 </div>
 
 <div class="container-ice">
     <h2>Ice Biome</h2>
     <div class="polar-bear">
-        <img src="{{ url_for('static', filename='polar-bear.png') }}" alt="polar-bear" class="polar-bear" />
-        <p>Polar bears are characterized by their strength and protectiveness to their young ones.</p>
+        <img src="{{ url_for('static', filename='polar-bear.png') }}" alt="polar-bear" class="polar-bear" id="image5" onMouseOver="showText5('Polar bears are characterized by their strength and protectiveness to their young ones.')" onMouseOut="hide5();"/>
+        <div id="text-polar-bear"></div>        
     </div>
     <div class="penguin">
-        <img src="{{ url_for('static', filename='penguin.jpeg') }}" alt="penguin" class="penguin" />
-        <p>Penguins are characterized by their ability to slide through ice.</p>
+        <img src="{{ url_for('static', filename='penguin.jpeg') }}" alt="penguin" class="penguin" id="image6" onMouseOver="showText6('Penguins are characterized by their ability to slide through ice.')" onMouseOut="hide6();"/>
+        <div id="text-penguin"></div>        
     </div>
 </div>
 
 <div class="container-forest">
     <h2>Forest Biome</h2>
     <div class="deer">
-        <img src="{{ url_for('static', filename='deer.jpg') }}" alt="deer" class="deer" />
-        <p>Deers are characterized by their long legs and powerful speed.</p>
+        <img src="{{ url_for('static', filename='deer.jpg') }}" alt="deer" class="deer" id="image7" onMouseOver="showText7('Deers are characterized by their long legs and powerful speed.')" onMouseOut="hide7();"/>
+        <div id="text-deer"></div>        
     </div>
     <div class="falcon">
-        <img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon" class="falcon" />
-        <p>Falcons are characterized by their long and pointed wings which they can beat up very fast.</p>
+        <img src="{{ url_for('static', filename='falcon.jpg') }}" alt="falcon" class="falcon" id="image8" onMouseOver="showText8('Falcons are characterized by their long and pointed wings which they can beat up very fast.')" onMouseOut="hide8();"/>
+        <div id="text-falcon"></div>        
     </div>
 </div>
 {% endblock %}

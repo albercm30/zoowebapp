@@ -410,20 +410,10 @@ nav {
     margin-bottom: 20px;
 } 
 
-.camel p {
-    padding-left: 10ex;
-    margin-bottom: 20px;
-} 
-
 .snake img {
     height: 300px;
     padding-left: 10ex;
     margin-top: 20px;
-    margin-bottom: 20px;
-} 
-
-.snake p {
-    padding-left: 10ex;
     margin-bottom: 20px;
 } 
 
@@ -441,20 +431,10 @@ nav {
     margin-bottom: 20px;
 } 
 
-.stingray p {
-    margin-bottom: 20px;
-    padding-left: 10ex;
-} 
-
 .dolphin img {
     height: 300px;
     padding-left: 10ex;
     margin-top: 20px;
-    margin-bottom: 20px;
-} 
-
-.dolphin p {
-    padding-left: 10ex;
     margin-bottom: 20px;
 } 
 
@@ -472,20 +452,10 @@ nav {
     margin-bottom: 20px;
 } 
 
-.polar-bear p {
-    padding-left: 10ex;
-    margin-bottom: 20px;
-} 
-
 .penguin img {
     height: 300px;
     padding-left: 10ex;
     margin-top: 20px;
-    margin-bottom: 20px;
-} 
-
-.penguin p {
-    padding-left: 10ex;
     margin-bottom: 20px;
 } 
 
@@ -503,11 +473,6 @@ nav {
     margin-bottom: 20px;
 } 
 
-.deer p {
-    padding-left: 10ex;
-    margin-bottom: 20px;
-} 
-
 .falcon img {
     height: 300px;
     padding-left: 10ex;
@@ -515,10 +480,6 @@ nav {
     margin-bottom: 20px;
 } 
 
-.falcon p {
-    padding-left: 10ex;
-    margin-bottom: 20px;
-} 
 /* ANIMAL */
 
 
