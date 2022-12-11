@@ -6,8 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../static/style.css">
-        <!-- "{{ url_for('static', filename='style.css') }}" -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='booking.js')}}"></script>
@@ -15,6 +14,7 @@
             var act_dates = {{ act_dates|tojson }}
             var act_id = {{ act_id|tojson }}
         </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='animal.js')}}"></script>
 
     </head>
     <body>
@@ -40,39 +40,7 @@
              </nav>
         </header>
         <section class="content">
-
-            
-            <div class="customer-container">
-                <h1>Customer</h1>
-                
-                <h2>Book the activities</h2>
-                <form action="{{ url_for('main.booking') }}" method="post" id="act_booked">
-                    
-                        <li><label>Choose the activity:  </label>
-                            <select name="activity_title_booked" id="activity_title_booked" >    
-                                {% for activity in act_dates %}  
-                                <option>{{activity}}</option>
-                                {% endfor %} 
-                            </select></li>
-                        <li><label>Choose the date:  </label>
-                            <select name="date_chosen" id="date_chosen">
-                            </select>
-                        </li>
-                    <li><label>How many places do you want?:  </label><input type="number" name="places_booked" value="1" min="1" max="99" required/></li>
-                    <li><button type="submit">Add</button></li>
-                </form>
-                
-                <!-- {% with messages = get_flashed_messages() %} -->
-                        <!-- {% for message in messages %} -->
-                            <p class="notification-customer">{{ message }}</p>
-                        <!-- {% endfor %} -->
-                <!-- {% endwith %} -->
-                
-                
-                <h2>Your current bookings</h2>
-            </div>
-
-            <!-- {% block content %}{% endblock %} -->
+            {% block content %}{% endblock %}
         </section>
 
         
