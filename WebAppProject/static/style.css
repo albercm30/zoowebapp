@@ -236,7 +236,6 @@ nav {
 
 
 /* LOGIN */
-
 .container-login {
     margin: 12rem 40rem 0 40rem;
     padding-top: 5rem;
@@ -279,6 +278,7 @@ nav {
     background-color: burlywood;
     font-size: large;
     color: #27231d;
+    border-radius: 5px;
     border-color: burlywood;
     transition: border-color 0.2s;    
 }
@@ -305,6 +305,51 @@ nav {
 	font-weight: bold;
 }
 /* LOGIN */
+
+
+
+/* CUSTOMER */
+.customer-container {
+    margin-top: 12rem;
+    padding-left: 42rem;
+    border: #27231d solid;
+}
+
+.customer-container h1 {
+    font-size: 50px;
+    margin-left: 8rem;
+}
+
+.customer-container h2 {
+    font-size: 30px;
+}
+
+.customer-container li {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.customer-container input {
+    height: 20px;
+    border-width: 1px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.customer-container select {
+    height: 25px;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.customer-container p {
+    font-size: 20px;
+}
+/* CUSTOMER */
 
 
 
@@ -392,8 +437,8 @@ nav {
 
 
 /* ANIMAL */
-.title h1{
-    color:navy
+.title h1 {
+    color:navy;
 } 
 
 .container-desert {
@@ -479,17 +524,7 @@ nav {
     margin-top: 20px;
     margin-bottom: 20px;
 } 
-
 /* ANIMAL */
-
-
-
-/* CUSTOMER */
-.customer-container {
-    margin-top: 10rem;
-    margin-left: 20rem;
-}
-/* CUSTOMER */
 
 
 

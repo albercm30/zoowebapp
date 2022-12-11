@@ -26,8 +26,8 @@
         <form action="{{ url_for('main.add_activity') }}" method="post">
             <h3>Adding activities:</h3>
             <ul class="add">
-                <li><label>Title of the activity: <input type="text" name="title" required/></label></li>
-                <li><label>Minimum age: <input type="number" name="minimum_age" class="min-age" required/></label></li>
+                <li><label>Title of the activity:  <input type="text" name="title" required/></label></li>
+                <li><label>Minimum age:  <input type="number" name="minimum_age" value="1" min="1" max="18" class="min-age" required/></label></li>
                 <li><textarea rows=5 cols=60 placeholder="Add a description" name="description" class="description" required></textarea></li>
                 <li><button type="submit">Submit</button></li>
             </ul>
@@ -44,17 +44,17 @@
         <form action="{{ url_for('main.add_schedule') }}" method="post">
             <h3> Scheduling activities:</h3>
             <ul>
-                <li><label>Activity:</label>
+                <li><label>Activity:  </label>
                     <select name="activity_title" >
                         {% for activity in activities %}
                         <option>{{ activity.title }}</option>
                         {% endfor %}
                     </select></li>
-                <li><label>Date: <input type="date" name="date" required/></label></li>
-                <li><label>Starting time : <input type="time" name="starting_time" required/></label></li>
-                <li><label>Duration in hours: <input type="number" name="duration" class="hours" required/></label></li>
-                <li><label>Number of places: <input type="number" name="places" class="places" required/></label></li>
-                <li><label>Price: <input type="number" name="price" class="price" required/></label></li>
+                <li><label>Date:  <input type="date" name="date" required/></label></li>
+                <li><label>Starting time:  <input type="time" name="starting_time" required/></label></li>
+                <li><label>Duration in hours:  <input type="number" name="duration" value="1" min="1" max="24" class="hours" required/></label></li>
+                <li><label>Number of places:  <input type="number" name="places" value="1" min="1" max="99" class="places" required/></label></li>
+                <li><label>Price:  <input type="number" name="price" class="price" value="1" min="1" max="99" required/></label></li>
                 <li><button type="submit">Add</button></li>
             </ul>
         </form>
