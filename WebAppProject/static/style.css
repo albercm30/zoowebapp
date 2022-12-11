@@ -87,8 +87,8 @@ nav {
 
 .title {
     padding-top: 15rem;
-    font-size: 5rem;
-    font-weight: bold;
+    font-size: 70px;
+    font-weight:600;
     text-align: center;
     color: #27231d;
 }
@@ -99,7 +99,6 @@ nav {
     margin:auto;
 }
 
-
 .container-middle img {
     float: right;
     margin-top: 3rem;
@@ -108,7 +107,6 @@ nav {
     border-radius: 2em;
     width: 600px;
 }
-
 
 .container-middle h2 {
     color: #e9ded6;
@@ -121,6 +119,25 @@ nav {
     color: #e9ded6;
     margin-left: 22rem;
     margin-bottom: 5rem;
+}
+
+.container-act {
+    margin-top: 5rem;
+    padding-left: 25rem;
+    color: #27231d;
+}
+
+.container-act h2 {
+    padding-left: 4rem;
+    font-size: 50px;
+}
+
+.activity-idx h3 {
+    font-size: 30px;
+}
+
+.activity-idx p {
+    font-size: 20px;
 }
 
 .container-animals-idx {

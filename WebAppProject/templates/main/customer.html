@@ -5,12 +5,12 @@
     var act_dates = {{ act_dates|tojson }}
     var act_id = {{ act_id|tojson }}
 </script>
+
 <div class="customer-container">
-    <h1>Customer</h1>
-    
+    <h1>Customer</h1>    
     <h2>Book the activities</h2>
-    <form action="{{ url_for('main.booking') }}" method="post" id="act_booked">
-        
+    
+    <form action="{{ url_for('main.booking') }}" method="post" id="act_booked">        
             <li><label>Choose the activity:  </label>
                 <select name="activity_title_booked" id="activity_title_booked" >    
                     {% for activity in act_dates %}  
@@ -30,8 +30,7 @@
                 <p class="notification-customer">{{ message }}</p>
             {% endfor %}
     {% endwith %}
-    
-    
+
     <h2>Your current bookings</h2>
 </div>
 
