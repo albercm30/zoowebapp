@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<script type="text/javascript">
+    var act_dates = {{ act_dates|tojson }}
+    var act_id = {{ act_id|tojson }}
+</script>
 <div class="customer-container">
     <h1>Customer</h1>
     
