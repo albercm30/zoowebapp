@@ -130,15 +130,14 @@ def add_schedule():
     new_schedule= model.Scheduledactivity(activity_id=activity_id, date=date, stating_time=starting_time,
     duration=duration, places=places, price=price)
     #verify that  the activity isn't already schedule for this date 
+    
+    
+    
+    db.session.add(new_schedule)
+    db.session.commit()
+    flash("You've successfully added scheduled the activityy")
     activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
     scheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
-    if len(scheduleds)>1:
-        flash("Activity already scheduled at this date")
-    else:
-        db.session.add(new_schedule)
-        db.session.commit()
-        flash("You've successfully added scheduled the activityy")
-
     return render_template("main/activity.html",activities=activities, scheduleds=scheduleds)
 
     
