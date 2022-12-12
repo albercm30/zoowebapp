@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% for message in messages %}
+    <div class="notification-add">{{ message }}</div>
+{% endfor %}
+{% endwith %}
+
 <div class="activity-manager">
     <h2 class="title-act">ACTIVITIES</h2>
     {% if current_user.is_manager %}
@@ -32,11 +39,7 @@
                 <li><button type="submit">Submit</button></li>
             </ul>
         </form>
-        {% with messages = get_flashed_messages() %}
-            {% for message in messages %}
-                <div class="notification-add">{{ message }}</div>
-            {% endfor %}
-        {% endwith %}
+
     
     </div>
     

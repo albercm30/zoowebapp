@@ -23,11 +23,13 @@ def index():
 def animals():
     return render_template("main/animal.html")
 
+
 @bp.route("/customer")
 @flask_login.login_required
 def customers():
     activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
     scheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    reservations = model.Reservation.query.order_by(model.Reservation.id.desc()).all()
     # for each activity title let's associate all of its available dates from the scheduled activities
     act_dates ={}
     #Same but with id of the activity as a key
@@ -45,13 +47,14 @@ def customers():
                 if activity.is_marked:
                     act_dates[activity.title].append(scheduled.date)
                     act_id[activity.title]= activity.id
-    return render_template("main/customer.html",activities=activities,scheduleds=scheduleds,act_dates=act_dates,act_id=act_id)
+    return render_template("main/customer.html",activities=activities,scheduleds=scheduleds,act_dates=act_dates,act_id=act_id,reservations=reservations)
 
 @bp.route("/customer",methods=["POST"])
 @flask_login.login_required
 def booking():
     activities = model.Activity.query.order_by(model.Activity.id.desc()).all()
     scheduleds = model.Scheduledactivity.query.order_by(model.Scheduledactivity.id.desc()).all()
+    reservations = model.Reservation.query.order_by(model.Reservation.id.desc()).all()
 
     # for each activity title let's associate all of its available dates from the scheduled activities
     act_dates ={}
@@ -91,7 +94,7 @@ def booking():
         setattr(scheduled, 'places', scheduled.places - places_booked)
         db.session.commit()
         flash("Your reservation is successful")
-    return render_template("main/customer.html",activities=activities,act_dates=act_dates,scheduleds=scheduleds,act_id=act_id)
+    return render_template("main/customer.html",activities=activities,act_dates=act_dates,scheduleds=scheduleds,act_id=act_id,reservations=reservations)
 
 @bp.route("/activity")
 # @flask_login.login_required
