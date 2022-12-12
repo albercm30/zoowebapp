@@ -88,7 +88,7 @@ def booking():
     if places_booked > scheduled.places:
         flash("There not enough available places")
     else :
-        new_reservation = model.Reservation(user_id=current_user.id,activity_id=scheduled.activity_id,places=places_booked,
+        new_reservation = model.Reservation(user_id=current_user.id,activity_id=scheduled.id,places=places_booked,
         date=date_time)
         db.session.add(new_reservation)
         setattr(scheduled, 'places', scheduled.places - places_booked)
