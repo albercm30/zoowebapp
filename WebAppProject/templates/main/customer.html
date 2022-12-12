@@ -36,7 +36,7 @@
         <thead>
         <tr>
             <td>Activity</td>
-            <td>Date</td>
+            <!--<td>Date</td>-->
             <td>Places</td>
             <td>Reservation id</td>
             <td>Reservation Date</td>
@@ -47,21 +47,15 @@
         <tbody>
         
         {% for reservation in reservations %}
-            {% for activity in activities %}
-                {% for scheduled in scheduleds %}
-                    {% if scheduled.activity_id == reservation.activity_id == activity.id%}
-                        {% if reservation.user_id == current_user.id%}
-                        <tr>
-                            <td>{{activity.title}}</td>
-                            <td>{{scheduled.date}}</td>
-                            <td>{{reservation.places}}</td>
-                            <td>{{reservation.id}}</td>
-                            <td>{{reservation.date}}</td>
-                        </tr>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
+            {% if reservation.user_id == current_user.id%}
+                <tr>
+                    <td>{{reservation.activity_id}}</td>
+                    <!--<td></td>-->
+                    <td>{{reservation.places}}</td>
+                    <td>{{reservation.id}}</td>
+                    <td>{{reservation.date}}</td>
+                </tr>
+            {% endif %}
         {% endfor %}
         </tbody>
         

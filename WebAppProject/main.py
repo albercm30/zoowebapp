@@ -93,6 +93,7 @@ def booking():
         db.session.add(new_reservation)
         setattr(scheduled, 'places', scheduled.places - places_booked)
         db.session.commit()
+        reservations = model.Reservation.query.order_by(model.Reservation.id.desc()).all()
         flash("Your reservation is successful")
     return render_template("main/customer.html",activities=activities,act_dates=act_dates,scheduleds=scheduleds,act_id=act_id,reservations=reservations)
 
