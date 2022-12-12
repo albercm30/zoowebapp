@@ -36,7 +36,7 @@ nav {
     background: burlywood;
     position:fixed;
     top:0;
-    max-width:100%;
+    width:100%;
 }
 
 .logo {
