@@ -103,7 +103,7 @@ nav {
     float: right;
     margin-top: 3rem;
     margin-left: 2rem;
-    margin-right: 24rem;
+    margin-right: 22rem;
     border-radius: 2em;
     width: 600px;
     transition: all 0.1s ease;
@@ -118,12 +118,12 @@ nav {
     color: #e9ded6;
     font-size: 50px;
     padding-top: 5rem;
-    padding-left: 10rem;
+    padding-left: 9rem;
 }
 
 .container-middle p {
     color: #e9ded6;
-    margin-left: 10rem;
+    margin-left: 9rem;
     margin-bottom: 5rem;
 }
 
