@@ -52,7 +52,7 @@ nav {
 .barnav{
     display:grid;
     grid-template-columns: repeat(5,auto);
-    padding-right: 23rem;
+    padding-right: 15rem;
 }
 
 .barnav li{
@@ -103,7 +103,7 @@ nav {
     float: right;
     margin-top: 3rem;
     margin-left: 2rem;
-    margin-right: 22rem;
+    margin-right: 15rem;
     border-radius: 2em;
     width: 600px;
     transition: all 0.1s ease;
@@ -123,6 +123,7 @@ nav {
 
 .container-middle p {
     color: #e9ded6;
+    font-size: 20px;
     margin-left: 9rem;
     margin-bottom: 5rem;
 }
