@@ -53,3 +53,4 @@ function showText8(text){
 function hide8(){
     document.getElementById("text-falcon").innerHTML="";
 }
+
