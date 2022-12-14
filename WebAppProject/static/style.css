@@ -470,9 +470,24 @@ nav {
 /* ANIMAL */
 .title h1 {
     color:navy;
-} 
+}
 
-.container-desert {
+#buttons {
+    padding-left: 9rem;
+}
+
+.animals-container button {
+    width: 80px;
+    height: 20px;
+}
+
+#animals h2{
+    padding-left: 5rem;
+    font-size: 40px;
+    color: #27231d;
+}
+
+#container-desert {
     background-color:darkorange;
     height: 830px;
     margin-top: 60px;
@@ -493,7 +508,7 @@ nav {
     margin-bottom: 20px;
 } 
 
-.container-aquatic { 
+#container-aquatic { 
     background-color: aqua;
     height: 830px;
     margin-top: 60px;
@@ -514,7 +529,7 @@ nav {
     margin-bottom: 20px;
 } 
 
-.container-ice {
+#container-ice {
     background-color: ghostwhite;
     height: 830px;
     margin-top: 60px;
@@ -535,7 +550,7 @@ nav {
     margin-bottom: 20px;
 } 
 
-.container-forest {
+#container-forest {
     background-color: darkgreen;
     height: 870px;
     margin-top: 60px;
@@ -554,7 +569,11 @@ nav {
     padding-left: 10ex;
     margin-top: 20px;
     margin-bottom: 20px;
-} 
+}
+
+.hide {
+    display: none;
+  }
 /* ANIMAL */
 
 
